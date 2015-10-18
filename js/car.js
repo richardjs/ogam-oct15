@@ -6,7 +6,7 @@ function Car(x, y){
 		y,
 		CAR_LENGTH,
 		CAR_WIDTH, {
-			frictionAir: .025,
+			frictionAir: .05,
 			density: 0.05,
 			restitution: .5
 		}
