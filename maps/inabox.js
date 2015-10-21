@@ -29,6 +29,7 @@ function inabox(){
 	new FinishLine(900, 900, 150, 150);
 }
 */
+/*
 function inabox(){
 	new Car(100, 100);
 	
@@ -46,4 +47,25 @@ function inabox(){
 	}
 	
 	new FinishLine(4000, 4000, 200, 200);
+}
+*/
+function inabox()
+{
+	//I am subtracting Y values from 1024 to avoid having to convert from InkScape manually
+	new Car(150, 1024 - 150);
+	
+	//border walls
+	new Wall(-25, 1024 - 512, 150, 1024); //left
+	new Wall(1045, 1024 - 512, 150, 1024); //right
+	new Wall(512, 1024 + 25, 1024, 150); //bottom
+	new Wall(512, 1024 - 1045, 1024, 150); //top
+	
+	//interior walls
+	new Wall(275, 1024 - 275, 50, 550);
+	new Wall(400, 1024 - 525, 300, 50);
+	new Wall(650, 1024 - 275, 300, 50);
+	new Wall(775, 1024 - 525, 50, 550);
+	new Wall(400, 1024 - 775, 800, 50);
+	
+	new FinishLine(135, 1024 - 885, 170, 170);
 }
