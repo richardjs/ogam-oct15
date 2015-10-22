@@ -68,4 +68,7 @@ function inabox()
 	new Wall(400, 1024 - 775, 800, 50);
 	
 	new FinishLine(135, 1024 - 885, 170, 170);
+
+	mapImage = document.getElementById('IMAGE_MAP01');
+	backgroundColor = 'rgb(120, 68, 33)';
 }
