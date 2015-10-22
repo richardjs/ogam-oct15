@@ -1,15 +1,16 @@
 'use strict';
 
-function Car(x, y){
+function Car(x, y, options){
+	options = options || {};
+	options.frictionAir = .05;
+	options.density = .05;
+	options.restitution = .5;
 	this.body = Matter.Bodies.rectangle(
 		x,
 		y,
 		CAR_LENGTH,
-		CAR_WIDTH, {
-			frictionAir: .05,
-			density: 0.05,
-			restitution: .5
-		}
+		CAR_WIDTH,
+		options
 	);
 	Matter.World.add(engine.world, this.body);
 	player = this;

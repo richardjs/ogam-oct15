@@ -52,7 +52,7 @@ function inabox(){
 function inabox()
 {
 	//I am subtracting Y values from 1024 to avoid having to convert from InkScape manually
-	new Car(150, 1024 - 150);
+	new Car(150, 1024 - 150, {angle: -Math.PI/2});
 	
 	//border walls
 	new Wall(-25, 1024 - 512, 150, 1024); //left
