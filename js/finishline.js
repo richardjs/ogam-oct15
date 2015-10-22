@@ -18,7 +18,7 @@ FinishLine.prototype.update = function(delta){
 
 	var px = player.body.position.x;
 	var py = player.body.position.y;
-	if(px > this.x && py < this.x + this.width && py > this.y && py < this.y + this.height){
+	if(px > this.x && px < this.x + this.width && py > this.y && py < this.y + this.height){
 		alert('Finished!');
 		this.finished = true;
 	}
