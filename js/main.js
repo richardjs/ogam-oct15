@@ -19,18 +19,6 @@ engine.world.gravity = {x: 0, y: 0};
 var lastTime = null;
 var delta = null;
 function frame(time){
-	if(lastTime === null){
-		lastTime = time;
-		requestAnimationFrame(frame);
-		return;
-	}
-
-	delta = time - lastTime;
-	lastTime = time;
-
-	player.update(delta);
-	Matter.Engine.update(engine, delta, 1);
-
 	ctx.fillStyle = backgroundColor;
 	ctx.fillRect(0, 0, canvas.width, canvas.height);
 	ctx.drawImage(mapImage, -player.body.position.x + canvas.width/2, -player.body.position.y + canvas.height/2);
@@ -44,6 +32,28 @@ function frame(time){
 	requestAnimationFrame(frame);
 }
 
+Matter.Events.on(engine, 'beforeTick', function(event){
+	if(event.timestamp === undefined){
+		return;
+	}
+	if(lastTime === null){
+		lastTime = event.timestamp;
+		return;
+	}
+	delta = event.timestamp - lastTime;
+	lastTime = event.timestamp;
+
+	player.update(delta);
+
+});
+
+Matter.Events.on(engine, 'afterTick', function(event){
+	for(var i = 0; i < nonphysicsEntities.length; i++){
+		var entity = nonphysicsEntities[i];
+		entity.update(delta);
+	}
+});
+
 function loadMap(map){
 	Matter.World.clear(engine.world);
 	nonphysicsEntities = [];
@@ -52,6 +62,6 @@ function loadMap(map){
 
 window.addEventListener('load', function(){
 	loadMap(inabox);
-	//Matter.Engine.run(engine);
+	Matter.Engine.run(engine);
 	requestAnimationFrame(frame);
 });
