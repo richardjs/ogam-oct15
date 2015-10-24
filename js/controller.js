@@ -42,5 +42,8 @@ document.addEventListener('keyup', function(event){
 		case 38:
 			controller.accelerate = false;
 			break;
+		case 13:
+			location.reload();
+			break;
 	}
 });
