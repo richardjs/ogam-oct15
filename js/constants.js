@@ -5,3 +5,8 @@ var CAR_LENGTH = 65;
 var CAR_ACCELERATION = 8;
 var CAR_THRUSTER_POWER = 2;
 var CAR_THRUSTER_POSITION = CAR_LENGTH*50000;
+
+function deg(angle)
+{
+	return angle * Math.PI / 180;
+}

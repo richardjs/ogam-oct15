@@ -52,7 +52,7 @@ function inabox(){
 function inabox()
 {
 	//I am subtracting Y values from 1024 to avoid having to convert from InkScape manually
-	new Car(150, 1024 - 150, {angle: -Math.PI/2});
+	new Car(150, 1024 - 150, {angle: deg(-90)});
 	
 	//border walls
 	new Wall(-25, 1024 - 512, 150, 1024); //left
@@ -70,5 +70,5 @@ function inabox()
 	new FinishLine(135, 1024 - 885, 170, 170);
 
 	mapImage = document.getElementById('IMAGE_MAP01');
-	backgroundColor = 'rgb(120, 68, 33)';
+	backgroundColor = '#784421';
 }
