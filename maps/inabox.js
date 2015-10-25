@@ -153,83 +153,156 @@ function inabox()
 	new WallCircle(1611, 4000 - 3615, 50);
 	
 	//big exterior corners
-	new Wall(110, 4000 - 714, 100, 50, {angle: deg(-15)});
-	new Wall(68, 4000 - 694, 100, 50, {angle: deg(-30)});
-	new Wall(30, 4000 - 662, 100, 50, {angle: deg(-45)});
-	new Wall(2, 4000 - 624, 100, 50, {angle: deg(-60)});
-	new Wall(-16, 4000 - 584, 100, 50, {angle: deg(-75)});
+	new Wall(50 + 110, 3975 - 714, 100, 50, {angle: deg(-15)});
+	new Wall(50 + 68, 3975 - 694, 100, 50, {angle: deg(-30)});
+	new Wall(50 + 30, 3975 - 662, 100, 50, {angle: deg(-45)});
+	new Wall(50 + 2, 3975 - 624, 100, 50, {angle: deg(-60)});
+	new Wall(50 + -16, 3975 - 584, 100, 50, {angle: deg(-75)});
 	
-	new Wall(1220, 4000 - 714, 100, 50, {angle: deg(15)});
-	new Wall(1262, 4000 - 694, 100, 50, {angle: deg(30)});
-	new Wall(1300, 4000 - 662, 100, 50, {angle: deg(45)});
-	new Wall(1328, 4000 - 624, 100, 50, {angle: deg(60)});
-	new Wall(1346, 4000 - 584, 100, 50, {angle: deg(75)});
+	new Wall(50 + 1220, 3975 - 714, 100, 50, {angle: deg(15)});
+	new Wall(50 + 1262, 3975 - 694, 100, 50, {angle: deg(30)});
+	new Wall(50 + 1300, 3975 - 662, 100, 50, {angle: deg(45)});
+	new Wall(50 + 1328, 3975 - 624, 100, 50, {angle: deg(60)});
+	new Wall(50 + 1346, 3975 - 584, 100, 50, {angle: deg(75)});
 	
-	new Wall(1140, 4000 - 10, 100, 50, {angle: deg(15)});
-	new Wall(1098, 4000 - 30, 100, 50, {angle: deg(30)});
-	new Wall(1060, 4000 - 62, 100, 50, {angle: deg(45)});
-	new Wall(1032, 4000 - 100, 100, 50, {angle: deg(60)});
-	new Wall(1014, 4000 - 140, 100, 50, {angle: deg(75)});
+	new Wall(50 + 1140, 3975 - 10, 100, 50, {angle: deg(15)});
+	new Wall(50 + 1098, 3975 - 30, 100, 50, {angle: deg(30)});
+	new Wall(50 + 1060, 3975 - 62, 100, 50, {angle: deg(45)});
+	new Wall(50 + 1032, 3975 - 100, 100, 50, {angle: deg(60)});
+	new Wall(50 + 1014, 3975 - 140, 100, 50, {angle: deg(75)});
 	
-	new Wall(1800, 4000 - 10, 100, 50, {angle: deg(-15)});
-	new Wall(1842, 4000 - 30, 100, 50, {angle: deg(-30)});
-	new Wall(1880, 4000 - 62, 100, 50, {angle: deg(-45)});
-	new Wall(1908, 4000 - 100, 100, 50, {angle: deg(-60)});
-	new Wall(1926, 4000 - 140, 100, 50, {angle: deg(-75)});
+	new Wall(50 + 1800, 3975 - 10, 100, 50, {angle: deg(-15)});
+	new Wall(50 + 1842, 3975 - 30, 100, 50, {angle: deg(-30)});
+	new Wall(50 + 1880, 3975 - 62, 100, 50, {angle: deg(-45)});
+	new Wall(50 + 1908, 3975 - 100, 100, 50, {angle: deg(-60)});
+	new Wall(50 + 1926, 3975 - 140, 100, 50, {angle: deg(-75)});
 	
-	new Wall(1800, 4000 - 1374, 100, 50, {angle: deg(15)});
-	new Wall(1842, 4000 - 1354, 100, 50, {angle: deg(30)});
-	new Wall(1880, 4000 - 1322, 100, 50, {angle: deg(45)});
-	new Wall(1908, 4000 - 1284, 100, 50, {angle: deg(60)});
-	new Wall(1926, 4000 - 1244, 100, 50, {angle: deg(75)});
+	new Wall(50 + 1800, 3975 - 1374, 100, 50, {angle: deg(15)});
+	new Wall(50 + 1842, 3975 - 1354, 100, 50, {angle: deg(30)});
+	new Wall(50 + 1880, 3975 - 1322, 100, 50, {angle: deg(45)});
+	new Wall(50 + 1908, 3975 - 1284, 100, 50, {angle: deg(60)});
+	new Wall(50 + 1926, 3975 - 1244, 100, 50, {angle: deg(75)});
 	
-	new Wall(110, 4000 - 1044, 100, 50, {angle: deg(15)});
-	new Wall(68, 4000 - 1064, 100, 50, {angle: deg(30)});
-	new Wall(30, 4000 - 1096, 100, 50, {angle: deg(45)});
-	new Wall(2, 4000 - 1134, 100, 50, {angle: deg(60)});
-	new Wall(-16, 4000 - 1174, 100, 50, {angle: deg(75)});
+	new Wall(50 + 110, 3975 - 1044, 100, 50, {angle: deg(15)});
+	new Wall(50 + 68, 3975 - 1064, 100, 50, {angle: deg(30)});
+	new Wall(50 + 30, 3975 - 1096, 100, 50, {angle: deg(45)});
+	new Wall(50 + 2, 3975 - 1134, 100, 50, {angle: deg(60)});
+	new Wall(50 + -16, 3975 - 1174, 100, 50, {angle: deg(75)});
 	
-	new Wall(109, 4000 - 1773, 100, 50, {angle: deg(-15)});
-	new Wall(67, 4000 - 1753, 100, 50, {angle: deg(-30)});
-	new Wall(29, 4000 - 1721, 100, 50, {angle: deg(-45)});
-	new Wall(1, 4000 - 1683, 100, 50, {angle: deg(-60)});
-	new Wall(-17, 4000 - 1643, 100, 50, {angle: deg(-75)});
+	new Wall(50 + 109, 3975 - 1773, 100, 50, {angle: deg(-15)});
+	new Wall(50 + 67, 3975 - 1753, 100, 50, {angle: deg(-30)});
+	new Wall(50 + 29, 3975 - 1721, 100, 50, {angle: deg(-45)});
+	new Wall(50 + 1, 3975 - 1683, 100, 50, {angle: deg(-60)});
+	new Wall(50 + -17, 3975 - 1643, 100, 50, {angle: deg(-75)});
 	
-	new Wall(557, 4000 - 1444, 100, 50, {angle: deg(-15)});
-	new Wall(599, 4000 - 1464, 100, 50, {angle: deg(-30)});
-	new Wall(637, 4000 - 1496, 100, 50, {angle: deg(-45)});
-	new Wall(665, 4000 - 1534, 100, 50, {angle: deg(-60)});
-	new Wall(683, 4000 - 1574, 100, 50, {angle: deg(-75)});
+	new Wall(50 + 557, 3975 - 1444, 100, 50, {angle: deg(-15)});
+	new Wall(50 + 599, 3975 - 1464, 100, 50, {angle: deg(-30)});
+	new Wall(50 + 637, 3975 - 1496, 100, 50, {angle: deg(-45)});
+	new Wall(50 + 665, 3975 - 1534, 100, 50, {angle: deg(-60)});
+	new Wall(50 + 683, 3975 - 1574, 100, 50, {angle: deg(-75)});
 	
-	new Wall(477, 4000 - 2314, 100, 50, {angle: deg(-15)});
-	new Wall(435, 4000 - 2294, 100, 50, {angle: deg(-30)});
-	new Wall(397, 4000 - 2262, 100, 50, {angle: deg(-45)});
-	new Wall(369, 4000 - 2224, 100, 50, {angle: deg(-60)});
-	new Wall(351, 4000 - 2184, 100, 50, {angle: deg(-75)});
+	new Wall(50 + 477, 3975 - 2314, 100, 50, {angle: deg(-15)});
+	new Wall(50 + 435, 3975 - 2294, 100, 50, {angle: deg(-30)});
+	new Wall(50 + 397, 3975 - 2262, 100, 50, {angle: deg(-45)});
+	new Wall(50 + 369, 3975 - 2224, 100, 50, {angle: deg(-60)});
+	new Wall(50 + 351, 3975 - 2184, 100, 50, {angle: deg(-75)});
 	
-	new Wall(917, 4000 - 2314, 100, 50, {angle: deg(15)});
-	new Wall(959, 4000 - 2294, 100, 50, {angle: deg(30)});
-	new Wall(997, 4000 - 2262, 100, 50, {angle: deg(45)});
-	new Wall(1025, 4000 - 2224, 100, 50, {angle: deg(60)});
-	new Wall(1043, 4000 - 2184, 100, 50, {angle: deg(75)});
+	new Wall(50 + 917, 3975 - 2314, 100, 50, {angle: deg(15)});
+	new Wall(50 + 959, 3975 - 2294, 100, 50, {angle: deg(30)});
+	new Wall(50 + 997, 3975 - 2262, 100, 50, {angle: deg(45)});
+	new Wall(50 + 1025, 3975 - 2224, 100, 50, {angle: deg(60)});
+	new Wall(50 + 1043, 3975 - 2184, 100, 50, {angle: deg(75)});
 	
-	new Wall(837, 4000 - 1610, 100, 50, {angle: deg(15)});
-	new Wall(795, 4000 - 1630, 100, 50, {angle: deg(30)});
-	new Wall(757, 4000 - 1662, 100, 50, {angle: deg(45)});
-	new Wall(729, 4000 - 1700, 100, 50, {angle: deg(60)});
-	new Wall(711, 4000 - 1740, 100, 50, {angle: deg(75)});
+	new Wall(50 + 837, 3975 - 1610, 100, 50, {angle: deg(15)});
+	new Wall(50 + 795, 3975 - 1630, 100, 50, {angle: deg(30)});
+	new Wall(50 + 757, 3975 - 1662, 100, 50, {angle: deg(45)});
+	new Wall(50 + 729, 3975 - 1700, 100, 50, {angle: deg(60)});
+	new Wall(50 + 711, 3975 - 1740, 100, 50, {angle: deg(75)});
 	
-	new Wall(1800, 4000 - 1610, 100, 50, {angle: deg(-15)});
-	new Wall(1842, 4000 - 1630, 100, 50, {angle: deg(-30)});
-	new Wall(1880, 4000 - 1662, 100, 50, {angle: deg(-45)});
-	new Wall(1908, 4000 - 1700, 100, 50, {angle: deg(-60)});
-	new Wall(1926, 4000 - 1740, 100, 50, {angle: deg(-75)});
+	new Wall(50 + 1800, 3975 - 1610, 100, 50, {angle: deg(-15)});
+	new Wall(50 + 1842, 3975 - 1630, 100, 50, {angle: deg(-30)});
+	new Wall(50 + 1880, 3975 - 1662, 100, 50, {angle: deg(-45)});
+	new Wall(50 + 1908, 3975 - 1700, 100, 50, {angle: deg(-60)});
+	new Wall(50 + 1926, 3975 - 1740, 100, 50, {angle: deg(-75)});
 	
-	new Wall(1800, 4000 - 3954, 100, 50, {angle: deg(15)});
-	new Wall(1842, 4000 - 3934, 100, 50, {angle: deg(30)});
-	new Wall(1880, 4000 - 3902, 100, 50, {angle: deg(45)});
-	new Wall(1908, 4000 - 3864, 100, 50, {angle: deg(60)});
-	new Wall(1926, 4000 - 3824, 100, 50, {angle: deg(75)});
+	new Wall(50 + 1800, 3975 - 3954, 100, 50, {angle: deg(15)});
+	new Wall(50 + 1842, 3975 - 3934, 100, 50, {angle: deg(30)});
+	new Wall(50 + 1880, 3975 - 3902, 100, 50, {angle: deg(45)});
+	new Wall(50 + 1908, 3975 - 3864, 100, 50, {angle: deg(60)});
+	new Wall(50 + 1926, 3975 - 3824, 100, 50, {angle: deg(75)});
+	
+	//small exterior corners
+	new Wall(692, 4000 - 2958, 50, 30, {angle: deg(-15)});
+	new Wall(659, 4000 - 2944, 50, 30, {angle: deg(-30)});
+	new Wall(625, 4000 - 2918, 50, 30, {angle: deg(-45)});
+	new Wall(598, 4000 - 2884, 50, 30, {angle: deg(-60)});
+	new Wall(581, 4000 - 2844, 50, 30, {angle: deg(-75)});
+	
+	new Wall(638, 4000 - 2451, 50, 30, {angle: deg(-15)});
+	new Wall(671, 4000 - 2465, 50, 30, {angle: deg(-30)});
+	new Wall(705, 4000 - 2491, 50, 30, {angle: deg(-45)});
+	new Wall(732, 4000 - 2525, 50, 30, {angle: deg(-60)});
+	new Wall(749, 4000 - 2565, 50, 30, {angle: deg(-75)});
+	
+	new Wall(152, 4000 - 2451, 50, 30, {angle: deg(15)});
+	new Wall(119, 4000 - 2465, 50, 30, {angle: deg(30)});
+	new Wall(85, 4000 - 2491, 50, 30, {angle: deg(45)});
+	new Wall(58, 4000 - 2525, 50, 30, {angle: deg(60)});
+	new Wall(41, 4000 - 2565, 50, 30, {angle: deg(75)});
+	
+	new Wall(152, 4000 - 3218, 50, 30, {angle: deg(-15)});
+	new Wall(119, 4000 - 3204, 50, 30, {angle: deg(-30)});
+	new Wall(85, 4000 - 3178, 50, 30, {angle: deg(-45)});
+	new Wall(58, 4000 - 3144, 50, 30, {angle: deg(-60)});
+	new Wall(41, 4000 - 3104, 50, 30, {angle: deg(-75)});
+	
+	new Wall(278, 4000 - 3218, 50, 30, {angle: deg(15)});
+	new Wall(311, 4000 - 3204, 50, 30, {angle: deg(30)});
+	new Wall(345, 4000 - 3178, 50, 30, {angle: deg(45)});
+	new Wall(372, 4000 - 3144, 50, 30, {angle: deg(60)});
+	new Wall(389, 4000 - 3104, 50, 30, {angle: deg(75)});
+	
+	new Wall(332, 4000 - 2632, 50, 30, {angle: deg(15)});
+	new Wall(299, 4000 - 2646, 50, 30, {angle: deg(30)});
+	new Wall(265, 4000 - 2672, 50, 30, {angle: deg(45)});
+	new Wall(238, 4000 - 2706, 50, 30, {angle: deg(60)});
+	new Wall(221, 4000 - 2746, 50, 30, {angle: deg(75)});
+	
+	new Wall(458, 4000 - 2632, 50, 30, {angle: deg(-15)});
+	new Wall(491, 4000 - 2646, 50, 30, {angle: deg(-30)});
+	new Wall(525, 4000 - 2672, 50, 30, {angle: deg(-45)});
+	new Wall(552, 4000 - 2706, 50, 30, {angle: deg(-60)});
+	new Wall(569, 4000 - 2746, 50, 30, {angle: deg(-75)});
+	
+	new Wall(512, 4000 - 3498, 50, 30, {angle: deg(-15)});
+	new Wall(479, 4000 - 3484, 50, 30, {angle: deg(-30)});
+	new Wall(445, 4000 - 3458, 50, 30, {angle: deg(-45)});
+	new Wall(418, 4000 - 3424, 50, 30, {angle: deg(-60)});
+	new Wall(401, 4000 - 3384, 50, 30, {angle: deg(-75)});
+	
+	new Wall(1158, 4000 - 3498, 50, 30, {angle: deg(15)});
+	new Wall(1191, 4000 - 3484, 50, 30, {angle: deg(30)});
+	new Wall(1225, 4000 - 3458, 50, 30, {angle: deg(45)});
+	new Wall(1252, 4000 - 3424, 50, 30, {angle: deg(60)});
+	new Wall(1269, 4000 - 3384, 50, 30, {angle: deg(75)});
+	
+	new Wall(1212, 4000 - 3032, 50, 30, {angle: deg(15)});
+	new Wall(1179, 4000 - 3046, 50, 30, {angle: deg(30)});
+	new Wall(1145, 4000 - 3072, 50, 30, {angle: deg(45)});
+	new Wall(1118, 4000 - 3106, 50, 30, {angle: deg(60)});
+	new Wall(1101, 4000 - 3146, 50, 30, {angle: deg(75)});
+	
+	new Wall(1338, 4000 - 3032, 50, 30, {angle: deg(-15)});
+	new Wall(1371, 4000 - 3046, 50, 30, {angle: deg(-30)});
+	new Wall(1405, 4000 - 3072, 50, 30, {angle: deg(-45)});
+	new Wall(1432, 4000 - 3106, 50, 30, {angle: deg(-60)});
+	new Wall(1449, 4000 - 3146, 50, 30, {angle: deg(-75)});
+	
+	new Wall(1392, 4000 - 3498, 50, 30, {angle: deg(-15)});
+	new Wall(1359, 4000 - 3484, 50, 30, {angle: deg(-30)});
+	new Wall(1325, 4000 - 3458, 50, 30, {angle: deg(-45)});
+	new Wall(1298, 4000 - 3424, 50, 30, {angle: deg(-60)});
+	new Wall(1281, 4000 - 3384, 50, 30, {angle: deg(-75)});
 	
 	//truck
 	new Wall(1863, 4000 - 2900, 230, 80, {angle:deg(54.8)});

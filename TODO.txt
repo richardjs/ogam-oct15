@@ -1,4 +1,4 @@
 For Richard:
-1. Switch to default renderer if no image is given
-2. Friction zones
-3. Buttons linked to "gates" (static objects that get deleted)
+1. Friction zones
+2. Buttons linked to "gates" (static objects that get deleted)
+3. Record ghosts and race against them
