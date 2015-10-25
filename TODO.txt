@@ -1,3 +1,4 @@
 For Richard:
--Switch to default renderer if no image is given
--Friction zones
+1. Switch to default renderer if no image is given
+2. Friction zones
+3. Buttons linked to "gates" (static objects that get deleted)
