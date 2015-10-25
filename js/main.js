@@ -1,6 +1,7 @@
 'use strict';
 
 window.engine = Matter.Engine.create();
+window.entities = [];
 window.nonphysicsEntities = [];
 window.player = null;
 window.canvas = document.createElement('canvas');
@@ -8,6 +9,7 @@ document.body.appendChild(window.canvas);
 window.ctx = canvas.getContext('2d');
 window.mapImage = null;
 window.backgroundColor = 'black';
+window.debug = false;
 
 window.IMAGE_CAR = document.getElementById('IMAGE_CAR');
 
@@ -23,11 +25,12 @@ function frame(time){
 	ctx.fillRect(0, 0, canvas.width, canvas.height);
 	ctx.drawImage(mapImage, -player.body.position.x + canvas.width/2, -player.body.position.y + canvas.height/2);
 
-	ctx.save();
-	ctx.translate(canvas.width/2, canvas.height/2);
-	ctx.rotate(player.body.angle);
-	ctx.drawImage(IMAGE_CAR, -IMAGE_CAR.width/2, -IMAGE_CAR.height/2);
-	ctx.restore();
+	player.render();
+	if(debug){
+		for(var i = 0; i < entities.length; i++){
+			entities[i].render();
+		}
+	}
 
 	requestAnimationFrame(frame);
 }
@@ -44,7 +47,6 @@ Matter.Events.on(engine, 'beforeTick', function(event){
 	lastTime = event.timestamp;
 
 	player.update(delta);
-
 });
 
 Matter.Events.on(engine, 'afterTick', function(event){

@@ -69,3 +69,11 @@ Car.prototype.update = function(delta){
 		);
 	}
 }
+
+Car.prototype.render = function(){
+	ctx.save();
+	ctx.translate(canvas.width/2, canvas.height/2);
+	ctx.rotate(this.body.angle);
+	ctx.drawImage(IMAGE_CAR, -IMAGE_CAR.width/2, -IMAGE_CAR.height/2);
+	ctx.restore();
+}
