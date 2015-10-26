@@ -314,3 +314,69 @@ function inabox()
 	mapImage = document.getElementById('IMAGE_MAP02');
 	backgroundColor = '#784421';
 }
+
+function inabox()
+{
+	//I am subtracting Y values from 1240 to avoid having to convert from Inkscape manually
+	new Car(300, 1240 - 250, {angle:deg(-90)});
+	
+	//table edges
+	new Wall(300, 1240 - 35, 390, 70);
+	new Wall(35, 1240 - 305, 70, 400);
+	new Wall(565, 1240 - 305, 70, 400);
+	new Wall(35, 1240 - 755, 70, 400);
+	new Wall(565, 1240 - 755, 70, 400);
+	new Wall(178, 1240 - 1115, 146, 250);
+	new Wall(422, 1240 - 1115, 146, 250);
+	new Wall(300, 1240 - 1210, 200, 60);
+	
+	//gate
+	new Wall(300, 1240 - 1025, 100, 70);
+	
+	//balls
+	new WallCircle(260, 1240 - 820, 20, {isStatic:false});
+	new WallCircle(300, 1240 - 820, 20, {isStatic:false});
+	new WallCircle(340, 1240 - 820, 20, {isStatic:false});
+	new WallCircle(280, 1240 - 786, 20, {isStatic:false});
+	new WallCircle(320, 1240 - 786, 20, {isStatic:false});
+	new WallCircle(300, 1240 - 752, 20, {isStatic:false});
+	
+	//side pockets
+	new Wall(16, 1240 - 558, 30, 50, {angle:deg(45)});
+	new Wall(5, 1240 - 530, 30, 50);
+	new Wall(16, 1240 - 502, 30, 50, {angle:deg(-45)});
+	
+	new Wall(584, 1240 - 558, 30, 50, {angle:deg(-45)});
+	new Wall(595, 1240 - 530, 30, 50);
+	new Wall(584, 1240 - 502, 30, 50, {angle:deg(45)});
+	
+	//corner pockets
+	new Wall(618, 1240 - 88, 150, 100, {angle:deg(45)});
+	new Wall(595, 1240 - 45, 30, 50);
+	new Wall(583, 1240 - 17, 30, 50, {angle:deg(45)});
+	new Wall(556, 1240 - 5, 50, 30);
+	new Wall(512, 1240 + 18, 150, 100, {angle:deg(45)});
+	
+	new Wall(88, 1240 + 18, 150, 100, {angle:deg(-45)});
+	new Wall(45, 1240 - 5, 50, 30);
+	new Wall(17, 1240 - 17, 30, 50, {angle:deg(-45)});
+	new Wall(5, 1240 - 45, 30, 50);
+	new Wall(-18, 1240 - 88, 150, 100, {angle:deg(-45)});
+	
+	new Wall(-18, 1240 - 972, 150, 100, {angle:deg(45)});
+	new Wall(5, 1240 - 1015, 30, 50);
+	new Wall(17, 1240 - 1043, 30, 50, {angle:deg(45)});
+	new Wall(45, 1240 - 1055, 50, 30);
+	new Wall(88, 1240 - 1078, 150, 100, {angle:deg(45)});
+	
+	new Wall(512, 1240 - 1078, 150, 100, {angle:deg(-45)});
+	new Wall(556, 1240 - 1055, 50, 30);
+	new Wall(583, 1240 - 1043, 30, 50, {angle:deg(-45)});
+	new Wall(595, 1240 - 1015, 30, 50);
+	new Wall(618, 1240 - 972, 150, 100, {angle:deg(-45)});
+	
+	new FinishLine(300, 1240 - 1120, 100, 120);
+	
+	mapImage = document.getElementById('IMAGE_MAP03');
+	backgroundColor = '#93ACA7';
+}
