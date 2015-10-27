@@ -74,6 +74,7 @@ function inabox()
 	backgroundColor = '#784421';
 }
 */
+/*
 function inabox()
 {
 	//I am subtracting Y values from 4000 to avoid having to convert from Inkscape manually
@@ -314,32 +315,33 @@ function inabox()
 	mapImage = document.getElementById('IMAGE_MAP02');
 	backgroundColor = '#784421';
 }
-
+*/
+/*
 function inabox()
 {
 	//I am subtracting Y values from 1240 to avoid having to convert from Inkscape manually
 	new Car(300, 1240 - 250, {angle:deg(-90)});
 	
 	//table edges
-	new Wall(300, 1240 - 35, 390, 70);
-	new Wall(35, 1240 - 305, 70, 400);
-	new Wall(565, 1240 - 305, 70, 400);
-	new Wall(35, 1240 - 755, 70, 400);
-	new Wall(565, 1240 - 755, 70, 400);
-	new Wall(178, 1240 - 1115, 146, 250);
-	new Wall(422, 1240 - 1115, 146, 250);
+	new Wall(300, 1240 - 35, 390, 70, {restitution:0.5});
+	new Wall(35, 1240 - 305, 70, 400, {restitution:0.5});
+	new Wall(565, 1240 - 305, 70, 400, {restitution:0.5});
+	new Wall(35, 1240 - 755, 70, 400, {restitution:0.5});
+	new Wall(565, 1240 - 755, 70, 400, {restitution:0.5});
+	new Wall(178, 1240 - 1115, 146, 250, {restitution:0.5});
+	new Wall(422, 1240 - 1115, 146, 250, {restitution:0.5});
 	new Wall(300, 1240 - 1210, 200, 60);
 	
 	//gate
-	new Wall(300, 1240 - 1025, 100, 70);
+	new Wall(300, 1240 - 1025, 100, 70, {restitution:0.5});
 	
 	//balls
-	new WallCircle(260, 1240 - 820, 20, {isStatic:false});
-	new WallCircle(300, 1240 - 820, 20, {isStatic:false});
-	new WallCircle(340, 1240 - 820, 20, {isStatic:false});
-	new WallCircle(280, 1240 - 786, 20, {isStatic:false});
-	new WallCircle(320, 1240 - 786, 20, {isStatic:false});
-	new WallCircle(300, 1240 - 752, 20, {isStatic:false});
+	new WallCircle(260, 1240 - 820, 20, {isStatic:false, restitution:0.6, density:0.01});
+	new WallCircle(300, 1240 - 820, 20, {isStatic:false, restitution:0.6, density:0.01});
+	new WallCircle(340, 1240 - 820, 20, {isStatic:false, restitution:0.6, density:0.01});
+	new WallCircle(280, 1240 - 786, 20, {isStatic:false, restitution:0.6, density:0.01});
+	new WallCircle(320, 1240 - 786, 20, {isStatic:false, restitution:0.6, density:0.01});
+	new WallCircle(300, 1240 - 752, 20, {isStatic:false, restitution:0.6, density:0.01});
 	
 	//side pockets
 	new Wall(16, 1240 - 558, 30, 50, {angle:deg(45)});
@@ -379,4 +381,44 @@ function inabox()
 	
 	mapImage = document.getElementById('IMAGE_MAP03');
 	backgroundColor = '#93ACA7';
+}
+*/
+function inabox()
+{
+	//I am subtracting Y values from 1480 to avoid having to convert from Inkscape manually
+	new Car(140, 1480 - 140, {angle:deg(-90)});
+	
+	//maze borders
+	new Wall(-10, 1480 - 740, 100, 1480);
+	new Wall(740, 1480 + 10, 1480, 100);
+	new Wall(1490, 1480 - 740, 100, 1480);
+	new Wall(740, 1480 - 1490, 1480, 100);
+	
+	//interior walls
+	new Wall(260, 1480 - 260, 40, 520);
+	new Wall(260, 1480 - 740, 520, 40);
+	new Wall(500, 1480 - 500, 40, 520);
+	new Wall(740, 1480 - 260, 40, 520);
+	new Wall(860, 1480 - 500, 280, 40);
+	new Wall(980, 1480 - 620, 40, 280);
+	new Wall(1100, 1480 - 740, 280, 40);
+	new Wall(1100, 1480 - 260, 280, 40);
+	new Wall(1220, 1480 - 380, 40, 280);
+	new Wall(1340, 1480 - 500, 280, 40);
+	
+	new Wall(500, 1480 - 1340, 40, 280);
+	new Wall(260, 1480 - 1100, 40, 280);
+	new Wall(860, 1480 - 980, 1240, 40);
+	new Wall(740, 1480 - 1100, 40, 280);
+	new Wall(980, 1480 - 1220, 520, 40);
+	
+	//gate
+	new Wall(980, 1480 - 1100, 40, 200);
+	
+	//button (TODO)
+	
+	new FinishLine(860, 1480 - 1100, 200, 200);
+	
+	mapImage = document.getElementById('IMAGE_MAP04');
+	backgroundColor = '#784421';
 }

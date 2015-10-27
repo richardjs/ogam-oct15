@@ -2,4 +2,5 @@ For Richard:
 1. Draw non-static objects
 2. Friction zones
 3. Buttons linked to "gates" (static objects that get deleted)
-4. Record ghosts and race against them
+4. Build actual menus and banish all alert boxes
+5. Record ghosts and race against them
