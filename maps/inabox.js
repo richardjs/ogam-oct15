@@ -387,7 +387,7 @@ function inabox()
 {
 	//I am subtracting Y values from 1480 to avoid having to convert from Inkscape manually
 	new Car(140, 1480 - 140, {angle:deg(-90)});
-	
+
 	//maze borders
 	new Wall(-10, 1480 - 740, 100, 1480);
 	new Wall(740, 1480 + 10, 1480, 100);

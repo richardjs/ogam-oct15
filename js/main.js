@@ -26,6 +26,12 @@ function frame(time){
 	ctx.fillRect(0, 0, canvas.width, canvas.height);
 	ctx.drawImage(mapImage, -player.body.position.x + canvas.width/2, -player.body.position.y + canvas.height/2);
 
+	if(debug){
+		for(var i = 0; i < nonphysicsEntities.length; i++){
+			nonphysicsEntities[i].render();
+		}
+	}
+
 	player.render();
 	for(var i = 0; i < entities.length; i++){
 		var entity = entities[i];

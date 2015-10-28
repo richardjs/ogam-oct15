@@ -2,9 +2,18 @@
 
 function Car(x, y, options){
 	options = options || {};
-	options.frictionAir = .05;
-	options.density = .05;
-	options.restitution = .5;
+	if(options.frictionAir === undefined){
+		options.frictionAir = .05;
+	}
+	if(options.density === undefined){
+		options.density = .05;
+	}
+	if(options.densite === undefined){
+		options.restitution = .5;
+	}
+
+	this.originalFriction = options.frictionAir;
+
 	this.body = Matter.Bodies.rectangle(
 		x,
 		y,
@@ -17,6 +26,11 @@ function Car(x, y, options){
 }
 
 Car.prototype.update = function(delta){
+	if(!this.inFrictionZone){
+		this.body.frictionAir = this.originalFriction;
+	}
+	this.inFrictionZone = false;
+
 	if(controller.accelerate){
 		Matter.Body.applyForce(
 			this.body,
