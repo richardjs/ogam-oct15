@@ -339,7 +339,7 @@ function inabox()
 	new WallCircle(340, 1240 - 820, 20, {isStatic:false});
 	new WallCircle(280, 1240 - 786, 20, {isStatic:false});
 	new WallCircle(320, 1240 - 786, 20, {isStatic:false});
-	new WallCircle(300, 1240 - 752, 20, {isStatic:false});
+	new WallCircle(300, 1240 - 752, 20, {isStatic:false, image: IMAGE_EIGHTBALL});
 	
 	//side pockets
 	new Wall(16, 1240 - 558, 30, 50, {angle:deg(45)});

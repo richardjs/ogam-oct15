@@ -12,6 +12,7 @@ window.backgroundColor = 'black';
 window.debug = false;
 
 window.IMAGE_CAR = document.getElementById('IMAGE_CAR');
+window.IMAGE_IMAGE_EIGHTBALL = document.getElementById('IMAGE_EIGHTBALL');
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -26,9 +27,10 @@ function frame(time){
 	ctx.drawImage(mapImage, -player.body.position.x + canvas.width/2, -player.body.position.y + canvas.height/2);
 
 	player.render();
-	if(debug){
-		for(var i = 0; i < entities.length; i++){
-			entities[i].render();
+	for(var i = 0; i < entities.length; i++){
+		var entity = entities[i];
+		if(debug || !entity.body.isStatic || entity.doRender){
+			entity.render();
 		}
 	}
 

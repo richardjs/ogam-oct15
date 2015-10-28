@@ -13,6 +13,9 @@ function WallCircle(x, y, radius, options){
 	Matter.World.add(engine.world, this.body);
 	this.radius = radius;
 	entities.push(this);
+
+	this.image = options.image;
+	window.c = this.body;
 }
 
 WallCircle.prototype.render = function(){
@@ -21,10 +24,15 @@ WallCircle.prototype.render = function(){
 		-player.body.position.x + canvas.width/2 + this.body.position.x,
 		-player.body.position.y + canvas.height/2 + this.body.position.y
 	);
-	ctx.fillStyle = '#282';
-	ctx.beginPath();
-	ctx.moveTo(0, 0);
-	ctx.arc(0, 0, this.radius, 0, 2*Math.PI);
-	ctx.fill();
+	if(this.image){
+		ctx.rotate(this.body.angle);
+		ctx.drawImage(this.image, -this.image.width/2, -this.image.height/2);
+	}else{
+		ctx.fillStyle = '#282';
+		ctx.beginPath();
+		ctx.moveTo(0, 0);
+		ctx.arc(0, 0, this.radius, 0, 2*Math.PI);
+		ctx.fill();
+	}
 	ctx.restore();
 }

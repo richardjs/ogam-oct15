@@ -15,6 +15,8 @@ function Wall(x, y, width, height, options){
 	);
 	Matter.World.add(engine.world, this.body);
 	entities.push(this);
+
+	this.image = options.image;
 }
 
 Wall.prototype.render = function(){
@@ -24,7 +26,11 @@ Wall.prototype.render = function(){
 		-player.body.position.y + canvas.height/2 + this.body.position.y
 	);
 	ctx.rotate(this.body.angle);
-	ctx.fillStyle = '#822';
-	ctx.fillRect(-this.width/2, -this.height/2, this.width, this.height);
+	if(this.image){
+		ctx.drawImage(this.image, -this.image.width/2, -this.image.height/2);
+	}else{
+		ctx.fillStyle = '#822';
+		ctx.fillRect(-this.width/2, -this.height/2, this.width, this.height);
+	}
 	ctx.restore();
 }
