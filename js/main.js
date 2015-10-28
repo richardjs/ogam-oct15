@@ -32,7 +32,6 @@ function frame(time){
 		}
 	}
 
-	player.render();
 	for(var i = 0; i < entities.length; i++){
 		var entity = entities[i];
 		if(debug || !entity.body.isStatic || entity.image || entity.color){
@@ -53,8 +52,12 @@ Matter.Events.on(engine, 'beforeTick', function(event){
 	}
 	delta = event.timestamp - lastTime;
 	lastTime = event.timestamp;
-
-	player.update(delta);
+	for(var i =0; i < entities.length; i++){
+		if(!entities[i].update){
+			continue;
+		}
+		entities[i].update(delta);
+	}
 });
 
 Matter.Events.on(engine, 'afterTick', function(event){
