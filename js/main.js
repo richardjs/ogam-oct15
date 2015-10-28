@@ -31,6 +31,14 @@ function frame(time){
 			nonphysicsEntities[i].render();
 		}
 	}
+	for(var i = 0; i < nonphysicsEntities.length; i++){
+		var entity = nonphysicsEntities[i];
+
+		// render buttons
+		if(entity.offImage && entity.onImage){
+			entity.render();
+		}
+	}
 
 	for(var i = 0; i < entities.length; i++){
 		var entity = entities[i];

@@ -418,7 +418,8 @@ function inabox()
 	//button (TODO)
 	new Button(140, 1480 - 200, 10,
 		//gate
-		new Wall(980, 1480 - 1100, 40, 200, {color: '#f00'})
+		new Wall(980, 1480 - 1100, 40, 200, {color: '#f00'}), true,
+		IMAGE_CAR, IMAGE_EIGHTBALL
 	);
 	
 	new FinishLine(860, 1480 - 1100, 200, 200);
