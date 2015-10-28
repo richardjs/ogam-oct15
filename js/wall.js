@@ -17,6 +17,10 @@ function Wall(x, y, width, height, options){
 	entities.push(this);
 
 	this.image = options.image;
+	this.color = options.color;
+	if(debug && !this.color){
+		this.color = '#822';
+	}
 }
 
 Wall.prototype.render = function(){
@@ -29,7 +33,7 @@ Wall.prototype.render = function(){
 	if(this.image){
 		ctx.drawImage(this.image, -this.image.width/2, -this.image.height/2);
 	}else{
-		ctx.fillStyle = '#822';
+		ctx.fillStyle = this.color;
 		ctx.fillRect(-this.width/2, -this.height/2, this.width, this.height);
 	}
 	ctx.restore();

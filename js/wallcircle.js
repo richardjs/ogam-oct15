@@ -15,7 +15,10 @@ function WallCircle(x, y, radius, options){
 	entities.push(this);
 
 	this.image = options.image;
-	window.c = this.body;
+	this.color = options.color;
+	if(debug && !this.color){
+		this.color = '#282';
+	}
 }
 
 WallCircle.prototype.render = function(){
@@ -28,7 +31,7 @@ WallCircle.prototype.render = function(){
 		ctx.rotate(this.body.angle);
 		ctx.drawImage(this.image, -this.image.width/2, -this.image.height/2);
 	}else{
-		ctx.fillStyle = '#282';
+		ctx.fillStyle = this.color;
 		ctx.beginPath();
 		ctx.moveTo(0, 0);
 		ctx.arc(0, 0, this.radius, 0, 2*Math.PI);

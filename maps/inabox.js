@@ -413,7 +413,7 @@ function inabox()
 	new Wall(980, 1480 - 1220, 520, 40);
 	
 	//gate
-	new Wall(980, 1480 - 1100, 40, 200);
+	new Wall(980, 1480 - 1100, 40, 200, {color: '#f00'});
 	
 	//button (TODO)
 	

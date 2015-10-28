@@ -29,7 +29,7 @@ function frame(time){
 	player.render();
 	for(var i = 0; i < entities.length; i++){
 		var entity = entities[i];
-		if(debug || !entity.body.isStatic || entity.doRender){
+		if(debug || !entity.body.isStatic || entity.image || entity.color){
 			entity.render();
 		}
 	}
