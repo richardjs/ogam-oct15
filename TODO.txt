@@ -1,5 +1,4 @@
 For Richard:
-1. Friction zones
-2. Buttons linked to "gates" (static objects that get deleted)
-3. Build actual menus and banish all alert boxes
-4. Record ghosts and race against them
+1. Buttons linked to "gates" (static objects that get deleted)
+2. Build actual menus and banish all alert boxes
+3. Record ghosts and race against them
