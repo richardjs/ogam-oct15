@@ -1,8 +1,8 @@
 'use strict';
 
 function FinishLine(x, y, width, height){
-	this.x = x - width/2;
-	this.y = y - height/2;
+	this.x = x;
+	this.y = y;
 	this.width = width;
 	this.height = height;
 
@@ -18,18 +18,19 @@ FinishLine.prototype.update = function(delta){
 
 	var px = player.body.position.x;
 	var py = player.body.position.y;
-	if(px > this.x && px < this.x + this.width && py > this.y && py < this.y + this.height){
+	if(px > this.x - this.width/2 && px < this.x + this.width/2 && py > this.y - this.height/2 && py < this.y + this.height/2){
 		alert('Finished!');
 		this.finished = true;
 	}
 }
 
 FinishLine.prototype.render = function(){
-	if(this.finished){
-		return;
-	}
-
-	var ctx = engine.render.context;
+	ctx.save();
+	ctx.translate(
+		-player.body.position.x + canvas.width/2 + this.x,
+		-player.body.position.y + canvas.height/2 + this.y
+	);
 	ctx.fillStyle = '#0f0';
-	ctx.fillRect(this.x, this.y, this.width, this.height);
+	ctx.fillRect(-this.width/2, -this.height/2, this.width, this.height);
+	ctx.restore();
 }
