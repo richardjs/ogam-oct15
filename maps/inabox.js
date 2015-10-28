@@ -316,7 +316,7 @@ function inabox()
 	backgroundColor = '#784421';
 }
 */
-/*
+
 function inabox()
 {
 	//I am subtracting Y values from 1240 to avoid having to convert from Inkscape manually
@@ -333,15 +333,15 @@ function inabox()
 	new Wall(300, 1240 - 1210, 200, 60);
 	
 	//gate
-	new Wall(300, 1240 - 1025, 100, 70, {restitution:0.5});
+	new Wall(300, 1240 - 1025, 100, 70, {restitution:0.5, image:IMAGE_GATE01});
 	
 	//balls
-	new WallCircle(260, 1240 - 820, 20, {isStatic:false});
-	new WallCircle(300, 1240 - 820, 20, {isStatic:false});
-	new WallCircle(340, 1240 - 820, 20, {isStatic:false});
-	new WallCircle(280, 1240 - 786, 20, {isStatic:false});
-	new WallCircle(320, 1240 - 786, 20, {isStatic:false});
-	new WallCircle(300, 1240 - 752, 20, {isStatic:false, image: IMAGE_EIGHTBALL});
+	new WallCircle(260, 1240 - 820, 20, {isStatic:false, frictionAir:0.001, color:"#FF0000"});
+	new WallCircle(300, 1240 - 820, 20, {isStatic:false, frictionAir:0.001, color:"#FF0000"});
+	new WallCircle(340, 1240 - 820, 20, {isStatic:false, frictionAir:0.001, color:"#FF0000"});
+	new WallCircle(280, 1240 - 786, 20, {isStatic:false, frictionAir:0.001, color:"#FF0000"});
+	new WallCircle(320, 1240 - 786, 20, {isStatic:false, frictionAir:0.001, color:"#FF0000"});
+	new WallCircle(300, 1240 - 752, 20, {isStatic:false, frictionAir:0.001, color:"#FF0000"});
 	
 	//side pockets
 	new Wall(16, 1240 - 558, 30, 50, {angle:deg(45)});
@@ -382,7 +382,7 @@ function inabox()
 	mapImage = document.getElementById('IMAGE_MAP03');
 	backgroundColor = '#93ACA7';
 }
-*/
+/*
 function inabox()
 {
 	//I am subtracting Y values from 1480 to avoid having to convert from Inkscape manually
@@ -413,7 +413,7 @@ function inabox()
 	new Wall(980, 1480 - 1220, 520, 40);
 	
 	//gate
-	new Wall(980, 1480 - 1100, 40, 200, {color: '#f00'});
+	new Wall(980, 1480 - 1100, 40, 200, {color: "#784421"});
 	
 	//button (TODO)
 	
@@ -422,3 +422,4 @@ function inabox()
 	mapImage = document.getElementById('IMAGE_MAP04');
 	backgroundColor = '#784421';
 }
+*/
