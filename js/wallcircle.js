@@ -16,6 +16,17 @@ function WallCircle(x, y, radius, options){
 
 	this.image = options.image;
 	this.color = options.color;
+	this.originalFriction = this.body.frictionAir;
+}
+
+WallCircle.prototype.update = function(delta){
+	if(this.body.isStatic){
+		return;
+	}
+	if(!this.inFrictionZone){
+		this.body.frictionAir = this.originalFriction;
+	}
+	this.inFrictionZone = false;
 }
 
 WallCircle.prototype.render = function(){

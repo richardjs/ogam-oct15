@@ -12,11 +12,14 @@ function FrictionZone(x, y, width, height, friction){
 }
 
 FrictionZone.prototype.update = function(delta){
-	var px = player.body.position.x;
-	var py = player.body.position.y;
-	if(px > this.x - this.width/2 && px < this.x + this.width/2 && py > this.y - this.height/2 && py < this.y + this.height/2){
-		player.body.frictionAir = this.friction;
-		player.inFrictionZone = true;
+	for(var j = 0; j < entities.length; j++){
+		var entity = entities[j];
+		var ex = entity.body.position.x;
+		var ey = entity.body.position.y;
+		if(ex > this.x - this.width/2 && ex < this.x + this.width/2 && ey > this.y - this.height/2 && ey < this.y + this.height/2){
+			entity.body.frictionAir = this.friction;
+			entity.inFrictionZone = true;
+		}
 	}
 }
 
@@ -42,12 +45,15 @@ function FrictionZoneCircle(x, y, radius, friction){
 }
 
 FrictionZoneCircle.prototype.update = function(delta){
-	var px = player.body.position.x;
-	var py = player.body.position.y;
-	var distance = Math.sqrt(Math.pow(px - this.x, 2) + Math.pow(py - this.y, 2));
-	if(distance < this.radius){
-		player.body.frictionAir = this.friction;
-		player.inFrictionZone = true;
+	for(var j = 0; j < entities.length; j++){
+		var entity = entities[j];
+		var ex = entity.body.position.x;
+		var ey = entity.body.position.y;
+		var distance = Math.sqrt(Math.pow(ex - this.x, 2) + Math.pow(ey - this.y, 2));
+		if(distance < this.radius){
+			entity.body.frictionAir = this.friction;
+			entity.inFrictionZone = true;
+		}
 	}
 }
 
