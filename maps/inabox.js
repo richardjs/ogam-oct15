@@ -74,7 +74,7 @@ function inabox()
 	backgroundColor = '#784421';
 }
 */
-/*
+
 function inabox()
 {
 	//I am subtracting Y values from 4000 to avoid having to convert from Inkscape manually
@@ -310,13 +310,20 @@ function inabox()
 	new Wall(1717, 4000 - 3005, 110, 78, {angle:deg(10)});
 	new WallCircle(1790, 4000 - 2996, 25);
 	
+	//oil slick
+	new FrictionZoneCircle(1814, 4000 - 3118, 50, 0.01);
+	new FrictionZoneCircle(1834, 4000 - 3041, 90, 0.01);
+	new FrictionZoneCircle(1805, 4000 - 2889, 140, 0.01);
+	new FrictionZoneCircle(1873, 4000 - 2826, 80, 0.01);
+	new FrictionZoneCircle(1841, 4000 - 2750, 75, 0.01);
+	
 	new FinishLine(200, 4000 - 3814, 300, 300);
 	
 	mapImage = document.getElementById('IMAGE_MAP02');
 	backgroundColor = '#784421';
 }
-*/
 
+/*
 function inabox()
 {
 	//I am subtracting Y values from 1240 to avoid having to convert from Inkscape manually
@@ -332,16 +339,45 @@ function inabox()
 	new Wall(422, 1240 - 1115, 146, 250, {restitution:0.5});
 	new Wall(300, 1240 - 1210, 200, 60);
 	
-	//gate
-	new Wall(300, 1240 - 1025, 100, 70, {restitution:0.5, image:IMAGE_GATE01});
+	//buttons
+	new Button(45, 1240 - 1015, 25,
+		//gate
+		new Wall(300, 1240 - 1025, 100, 70, {restitution:0.5, image:IMAGE_GATE01}), true,
+		IMAGE_BUTTONUP, IMAGE_BUTTONDOWN
+	);
+	new Button(555, 1240 - 1015, 25,
+		//gate
+		new Wall(300, 1240 - 1025, 100, 70, {restitution:0.5, image:IMAGE_GATE01}), true,
+		IMAGE_BUTTONUP, IMAGE_BUTTONDOWN
+	);
+	new Button(45, 1240 - 530, 25,
+		//gate
+		new Wall(300, 1240 - 1025, 100, 70, {restitution:0.5, image:IMAGE_GATE01}), true,
+		IMAGE_BUTTONUP, IMAGE_BUTTONDOWN
+	);
+	new Button(555, 1240 - 530, 25,
+		//gate
+		new Wall(300, 1240 - 1025, 100, 70, {restitution:0.5, image:IMAGE_GATE01}), true,
+		IMAGE_BUTTONUP, IMAGE_BUTTONDOWN
+	);
+	new Button(45, 1240 - 45, 25,
+		//gate
+		new Wall(300, 1240 - 1025, 100, 70, {restitution:0.5, image:IMAGE_GATE01}), true,
+		IMAGE_BUTTONUP, IMAGE_BUTTONDOWN
+	);
+	new Button(555, 1240 - 45, 25,
+		//gate
+		new Wall(300, 1240 - 1025, 100, 70, {restitution:0.5, image:IMAGE_GATE01}), true,
+		IMAGE_BUTTONUP, IMAGE_BUTTONDOWN
+	);
 	
 	//balls
-	new WallCircle(260, 1240 - 820, 20, {isStatic:false, frictionAir:0.001, color:"#FF0000"});
-	new WallCircle(300, 1240 - 820, 20, {isStatic:false, frictionAir:0.001, color:"#FF0000"});
-	new WallCircle(340, 1240 - 820, 20, {isStatic:false, frictionAir:0.001, color:"#FF0000"});
-	new WallCircle(280, 1240 - 786, 20, {isStatic:false, frictionAir:0.001, color:"#FF0000"});
-	new WallCircle(320, 1240 - 786, 20, {isStatic:false, frictionAir:0.001, color:"#FF0000"});
-	new WallCircle(300, 1240 - 752, 20, {isStatic:false, frictionAir:0.001, color:"#FF0000"});
+	new WallCircle(260, 1240 - 820, 20, {isStatic:false, frictionAir:0.005, color:"#CCCCFF"});
+	new WallCircle(300, 1240 - 820, 20, {isStatic:false, frictionAir:0.005, color:"#CCCCFF"});
+	new WallCircle(340, 1240 - 820, 20, {isStatic:false, frictionAir:0.005, color:"#CCCCFF"});
+	new WallCircle(280, 1240 - 786, 20, {isStatic:false, frictionAir:0.005, color:"#CCCCFF"});
+	new WallCircle(320, 1240 - 786, 20, {isStatic:false, frictionAir:0.005, color:"#CCCCFF"});
+	new WallCircle(300, 1240 - 752, 20, {isStatic:false, frictionAir:0.005, color:"#CCCCFF"});
 	
 	//side pockets
 	new Wall(16, 1240 - 558, 30, 50, {angle:deg(45)});
@@ -382,6 +418,7 @@ function inabox()
 	mapImage = document.getElementById('IMAGE_MAP03');
 	backgroundColor = '#93ACA7';
 }
+*/
 /*
 function inabox()
 {
@@ -412,14 +449,11 @@ function inabox()
 	new Wall(740, 1480 - 1100, 40, 280);
 	new Wall(980, 1480 - 1220, 520, 40);
 	
-	//gate
-	//new Wall(980, 1480 - 1100, 40, 200, {color: '#f00'});
-	
 	//button (TODO)
-	new Button(140, 1480 - 200, 10,
+	new Button(1340, 1480 - 380, 25,
 		//gate
-		new Wall(980, 1480 - 1100, 40, 200, {color: '#f00'}), true,
-		IMAGE_CAR, IMAGE_EIGHTBALL
+		new Wall(980, 1480 - 1100, 40, 200, {color: '#784421'}), false,
+		IMAGE_BUTTONUP, IMAGE_BUTTONDOWN
 	);
 	
 	new FinishLine(860, 1480 - 1100, 200, 200);
