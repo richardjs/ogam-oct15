@@ -22,6 +22,7 @@ function Car(x, y, options){
 		options
 	);
 	Matter.World.add(engine.world, this.body);
+	entities.push(this)
 	player = this;
 }
 
