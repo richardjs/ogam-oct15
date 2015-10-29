@@ -18,6 +18,17 @@ function Wall(x, y, width, height, options){
 
 	this.image = options.image;
 	this.color = options.color;
+	this.originalFriction = this.body.frictionAir;
+}
+
+Wall.prototype.update = function(delta){
+	if(this.body.isStatic){
+		return;
+	}
+	if(!this.inFrictionZone){
+		this.body.frictionAir = this.originalFriction;
+	}
+	this.inFrictionZone = false;
 }
 
 Wall.prototype.render = function(){
