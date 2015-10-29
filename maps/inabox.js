@@ -74,7 +74,7 @@ function inabox()
 	backgroundColor = '#784421';
 }
 */
-
+/*
 function inabox()
 {
 	//I am subtracting Y values from 4000 to avoid having to convert from Inkscape manually
@@ -322,8 +322,8 @@ function inabox()
 	mapImage = document.getElementById('IMAGE_MAP02');
 	backgroundColor = '#784421';
 }
+*/
 
-/*
 function inabox()
 {
 	//I am subtracting Y values from 1240 to avoid having to convert from Inkscape manually
@@ -372,12 +372,20 @@ function inabox()
 	);
 	
 	//balls
-	new WallCircle(260, 1240 - 820, 20, {isStatic:false, frictionAir:0.005, color:"#CCCCFF"});
-	new WallCircle(300, 1240 - 820, 20, {isStatic:false, frictionAir:0.005, color:"#CCCCFF"});
-	new WallCircle(340, 1240 - 820, 20, {isStatic:false, frictionAir:0.005, color:"#CCCCFF"});
-	new WallCircle(280, 1240 - 786, 20, {isStatic:false, frictionAir:0.005, color:"#CCCCFF"});
-	new WallCircle(320, 1240 - 786, 20, {isStatic:false, frictionAir:0.005, color:"#CCCCFF"});
-	new WallCircle(300, 1240 - 752, 20, {isStatic:false, frictionAir:0.005, color:"#CCCCFF"});
+	new WallCircle(260, 1240 - 820, 20, {isStatic:false, restitution:0.8, frictionAir:0.002, color:"#CCCCFF"});
+	new WallCircle(300, 1240 - 820, 20, {isStatic:false, restitution:0.8, frictionAir:0.002, color:"#CCCCFF"});
+	new WallCircle(340, 1240 - 820, 20, {isStatic:false, restitution:0.8, frictionAir:0.002, color:"#CCCCFF"});
+	new WallCircle(280, 1240 - 786, 20, {isStatic:false, restitution:0.8, frictionAir:0.002, color:"#CCCCFF"});
+	new WallCircle(320, 1240 - 786, 20, {isStatic:false, restitution:0.8, frictionAir:0.002, color:"#CCCCFF"});
+	new WallCircle(300, 1240 - 752, 20, {isStatic:false, restitution:0.8, frictionAir:0.002, color:"#CCCCFF"});
+	
+	//pocket friction zones
+	new FrictionZoneCircle(45, 1240 - 1015, 25, 0.1);
+	new FrictionZoneCircle(555, 1240 - 1015, 25, 0.1);
+	new FrictionZoneCircle(45, 1240 - 530, 25, 0.1);
+	new FrictionZoneCircle(555, 1240 - 530, 25, 0.1);
+	new FrictionZoneCircle(45, 1240 - 45, 25, 0.1);
+	new FrictionZoneCircle(555, 1240 - 45, 25, 0.1);
 	
 	//side pockets
 	new Wall(16, 1240 - 558, 30, 50, {angle:deg(45)});
@@ -418,7 +426,7 @@ function inabox()
 	mapImage = document.getElementById('IMAGE_MAP03');
 	backgroundColor = '#93ACA7';
 }
-*/
+
 /*
 function inabox()
 {
