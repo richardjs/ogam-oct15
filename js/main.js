@@ -112,7 +112,7 @@ Matter.Events.on(engine, 'afterTick', function(event){
 function loadMap(map){
 	Matter.World.clear(engine.world);
 	Matter.Engine.clear(engine);
-	entities = []
+	entities = [];
 	nonphysicsEntities = [];
 	raceTime = 0;
 	level = map.name;
