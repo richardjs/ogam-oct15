@@ -1,3 +1,7 @@
 For Richard:
-1. Build actual menus and banish all alert boxes
-2. Record ghosts and race against them
+- record times
+- retry / exit race
+
+- particle fx
+
+- record ghosts

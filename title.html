@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+	<head>
+		<style>
+			body{
+				background: #784421;
+				margin: 0px;
+				overflow: hidden;
+			}
+			#textbox{
+				background: rgba(255, 255, 255, 0.9);
+				font: 22pt courier;
+				font-style: italic;
+				height: 100%;
+				position: fixed;
+				right: 50px;
+				top: 0px;
+				width: 40%;
+			}
+			#textbox > h1 > center{
+				border-bottom: 5px solid red;
+				border-top: 5px solid red;
+			}
+			#textbox h1{
+				border-bottom: 5px solid blue;
+			}
+			#textbox p{
+				font-size: 16pt;
+				padding: 0px 5px;
+			}
+		</style>
+	</head>
+	<body>
+		<img src="img/map02.png">
+		<div id="textbox">
+			<h1 style="color: #c00"><center>River City Racer</center></h1>
+			<p>You might say driving a vehicle steered only by thrusters, with
+			no brakes and barely any training, would be trouble.</p>
+			<p>You must be new to River City.<p>
+			<p style="font-variant: small-caps; letter-spacing: 10px; color: red; font-size: 20pt">Instructions</p>
+			<ul style="font-size: 14pt; font-style: normal;">
+				<li>Up arrow - fire rear thruster</li>
+				<li>Left and right arrows - fire fore side thrusters</li>
+				<li>A and D - fire aft side thrusters</li>
+			</ul>
+			<p>Race to the finish line and beat the best time!</p>
+			<h3 style="color: red"><center>Press enter to continue</center></h3>
+		</div>
+
+		<script>
+		document.addEventListener('keydown', function(event){
+			if(event.keyCode === 13){
+				window.location = 'game.html';
+			}
+		});
+		</script>
+	</body>
+</html>
