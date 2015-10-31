@@ -19,8 +19,13 @@ FinishLine.prototype.update = function(delta){
 	var px = player.body.position.x;
 	var py = player.body.position.y;
 	if(px > this.x - this.width/2 && px < this.x + this.width/2 && py > this.y - this.height/2 && py < this.y + this.height/2){
-		alert('Finished!');
 		this.finished = true;
+		setTimeout(function(){
+			Matter.Engine.clear(engine);
+			Matter.World.clear(engine.world);
+			cancelAnimationFrame(timer);
+			showMenu();
+		}, 1000);
 	}
 }
 

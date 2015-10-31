@@ -21,6 +21,7 @@ engine.world.gravity = {x: 0, y: 0};
 
 var lastTime = null;
 var delta = null;
+window.timer = null;
 function frame(time){
 	ctx.fillStyle = backgroundColor;
 	ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -47,7 +48,7 @@ function frame(time){
 		}
 	}
 
-	requestAnimationFrame(frame);
+	timer = requestAnimationFrame(frame);
 }
 
 Matter.Events.on(engine, 'beforeTick', function(event){
@@ -77,12 +78,13 @@ Matter.Events.on(engine, 'afterTick', function(event){
 
 function loadMap(map){
 	Matter.World.clear(engine.world);
+	Matter.Engine.clear(engine);
+	entities = []
 	nonphysicsEntities = [];
 	map();
 }
 
 window.addEventListener('load', function(){
-	loadMap(inabox);
 	Matter.Engine.run(engine);
-	requestAnimationFrame(frame);
+	showMenu();
 });
