@@ -49,7 +49,7 @@ function inabox(){
 	new FinishLine(4000, 4000, 200, 200);
 }
 */
-/*
+
 function inabox()
 {
 	//I am subtracting Y values from 1024 to avoid having to convert from InkScape manually
@@ -73,9 +73,8 @@ function inabox()
 	mapImage = document.getElementById('IMAGE_MAP01');
 	backgroundColor = '#784421';
 }
-*/
-/*
-function inabox()
+
+function highway()
 {
 	//I am subtracting Y values from 4000 to avoid having to convert from Inkscape manually
 	new Car(200, 4000 - 200, {angle:deg(-90)});
@@ -322,9 +321,8 @@ function inabox()
 	mapImage = document.getElementById('IMAGE_MAP02');
 	backgroundColor = '#784421';
 }
-*/
 
-function inabox()
+function pool()
 {
 	//I am subtracting Y values from 1240 to avoid having to convert from Inkscape manually
 	new Car(300, 1240 - 250, {angle:deg(-90)});
@@ -427,11 +425,10 @@ function inabox()
 	backgroundColor = '#93ACA7';
 }
 
-/*
-function inabox()
+function maze()
 {
 	//I am subtracting Y values from 1480 to avoid having to convert from Inkscape manually
-	new Car(140, 1480 - 140, {angle:deg(-90)});
+	new Car(860, 1480 - 620, {angle:deg(-90)});
 
 	//maze borders
 	new Wall(-10, 1480 - 740, 100, 1480);
@@ -457,8 +454,13 @@ function inabox()
 	new Wall(740, 1480 - 1100, 40, 280);
 	new Wall(980, 1480 - 1220, 520, 40);
 	
-	//button (TODO)
+	//button
 	new Button(1340, 1480 - 380, 25,
+		//gate
+		new Wall(980, 1480 - 1100, 40, 200, {color: '#784421'}), false,
+		IMAGE_BUTTONUP, IMAGE_BUTTONDOWN
+	);
+	new Button(140, 1480 - 140, 25,
 		//gate
 		new Wall(980, 1480 - 1100, 40, 200, {color: '#784421'}), false,
 		IMAGE_BUTTONUP, IMAGE_BUTTONDOWN
@@ -469,4 +471,98 @@ function inabox()
 	mapImage = document.getElementById('IMAGE_MAP04');
 	backgroundColor = '#784421';
 }
-*/
+
+function reverse()
+{
+	//I am subtracting Y values from 1640 to avoid having to convert from Inkscape manually
+	new Car(120, 1640 - 1000, {angle:deg(-90)});
+	
+	//map borders
+	new Wall(-30, 1640 - 820, 100, 1640);
+	new Wall(510, 1640 - 1670, 1020, 100);
+	new Wall(1050, 1640 - 820, 100, 1640);
+	new Wall(510, 1640 + 30, 1020, 100);
+	
+	//interior walls
+	new Wall(150, 1640 - 640, 300, 40);
+	new Wall(280, 1640 - 820, 120, 1110);
+	new Wall(506, 1640 - 820, 500, 120);
+	new Wall(281.5, 1640 - 1381, 35, 80);
+	new Wall(761, 1640 - 820, 80, 34);
+	new Wall(281.5, 1640 - 260, 35, 80);
+	new WallCircle(265, 1640 - 1376, 45);
+	new WallCircle(295, 1640 - 1376, 45);
+	new WallCircle(756, 1640 - 835, 45);
+	new WallCircle(756, 1640 - 805, 45);
+	new WallCircle(295, 1640 - 265, 45);
+	new WallCircle(265, 1640 - 265, 45);
+	
+	new Wall(640, 1640 - 266, 200, 500);
+	new Wall(700, 1640 - 491, 230, 140);
+	new WallCircle(585, 1640 - 516, 45);
+	
+	new Wall(640, 1640 - 1375, 200, 500);
+	new Wall(700, 1640 - 1150, 230, 140);
+	new WallCircle(585, 1640 - 1125, 45);
+	
+	//round corners
+	new Wall(158, 1640 - 1637, 100, 50, {angle: deg(-15)});
+	new Wall(120, 1640 - 1623, 100, 50, {angle: deg(-30)});
+	new Wall(70, 1640 - 1589, 100, 50, {angle: deg(-45)});
+	new Wall(20, 1640 - 1525, 100, 50, {angle: deg(-60)});
+	new Wall(4, 1640 - 1485, 100, 50, {angle: deg(-75)});
+	
+	new Wall(402, 1640 - 1637, 100, 50, {angle: deg(15)});
+	new Wall(440, 1640 - 1623, 100, 50, {angle: deg(30)});
+	new Wall(490, 1640 - 1589, 100, 50, {angle: deg(45)});
+	new Wall(540, 1640 - 1525, 100, 50, {angle: deg(60)});
+	new Wall(556, 1640 - 1485, 100, 50, {angle: deg(75)});
+	
+	new Wall(478, 1640 - 863, 100, 50, {angle: deg(15)});
+	new Wall(440, 1640 - 877, 100, 50, {angle: deg(30)});
+	new Wall(390, 1640 - 911, 100, 50, {angle: deg(45)});
+	new Wall(340, 1640 - 975, 100, 50, {angle: deg(60)});
+	new Wall(324, 1640 - 1015, 100, 50, {angle: deg(75)});
+	
+	new Wall(862, 1640 - 1097, 100, 50, {angle: deg(15)});
+	new Wall(900, 1640 - 1083, 100, 50, {angle: deg(30)});
+	new Wall(950, 1640 - 1049, 100, 50, {angle: deg(45)});
+	new Wall(1000, 1640 - 985, 100, 50, {angle: deg(60)});
+	new Wall(1016, 1640 - 945, 100, 50, {angle: deg(75)});
+	
+	new Wall(862, 1640 - 544, 100, 50, {angle: deg(-15)});
+	new Wall(900, 1640 - 558, 100, 50, {angle: deg(-30)});
+	new Wall(950, 1640 - 592, 100, 50, {angle: deg(-45)});
+	new Wall(1000, 1640 - 656, 100, 50, {angle: deg(-60)});
+	new Wall(1016, 1640 - 696, 100, 50, {angle: deg(-75)});
+	
+	new Wall(478, 1640 - 777, 100, 50, {angle: deg(-15)});
+	new Wall(440, 1640 - 763, 100, 50, {angle: deg(-30)});
+	new Wall(390, 1640 - 729, 100, 50, {angle: deg(-45)});
+	new Wall(340, 1640 - 665, 100, 50, {angle: deg(-60)});
+	new Wall(324, 1640 - 625, 100, 50, {angle: deg(-75)});
+	
+	new Wall(401, 1640 - 3, 100, 50, {angle: deg(-15)});
+	new Wall(439, 1640 - 17, 100, 50, {angle: deg(-30)});
+	new Wall(489, 1640 - 51, 100, 50, {angle: deg(-45)});
+	new Wall(539, 1640 - 115, 100, 50, {angle: deg(-60)});
+	new Wall(555, 1640 - 155, 100, 50, {angle: deg(-75)});
+	
+	new Wall(158, 1640 - 3, 100, 50, {angle: deg(15)});
+	new Wall(120, 1640 - 17, 100, 50, {angle: deg(30)});
+	new Wall(70, 1640 - 51, 100, 50, {angle: deg(45)});
+	new Wall(20, 1640 - 115, 100, 50, {angle: deg(60)});
+	new Wall(4, 1640 - 155, 100, 50, {angle: deg(75)});
+	
+	//Button
+	new Button(120, 1640 - 525, 25,
+		//gate
+		new Wall(120, 1640 - 880, 200, 40, {color: '#784421'}), false,
+		IMAGE_BUTTONUP, IMAGE_BUTTONDOWN
+	);
+	
+	new FinishLine(120, 1640 - 760, 200, 200);
+	
+	mapImage = document.getElementById('IMAGE_MAP05');
+	backgroundColor = '#784421';
+}

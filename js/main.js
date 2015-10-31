@@ -77,12 +77,13 @@ Matter.Events.on(engine, 'afterTick', function(event){
 
 function loadMap(map){
 	Matter.World.clear(engine.world);
+	entities = [];
 	nonphysicsEntities = [];
 	map();
 }
 
 window.addEventListener('load', function(){
-	loadMap(inabox);
+	loadMap(reverse);
 	Matter.Engine.run(engine);
 	requestAnimationFrame(frame);
 });
