@@ -2,7 +2,8 @@
 
 var levels = [
 	{name: 'Highway', func: highway},
-	{name: 'Maze', func: highway}
+	{name: 'Maze', func: maze},
+	{name: 'Pool Party', func: pool}
 ]
 
 var selected = 0;
