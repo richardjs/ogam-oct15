@@ -21,7 +21,7 @@ Button.prototype.update = function(delta){
 		var ex = entity.body.position.x;
 		var ey = entity.body.position.y;
 		var distance = Math.sqrt(Math.pow(ex - this.x, 2) + Math.pow(ey - this.y, 2));
-		if(distance < this.radius){
+		if(distance - BUTTON_RANGE < this.radius){
 			if(entities.indexOf(this.target) >= 0){
 				entities.splice(entities.indexOf(this.target), 1);
 				Matter.World.remove(engine.world, this.target.body);
