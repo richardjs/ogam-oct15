@@ -21,6 +21,10 @@ function drawMenu(){
 		var name = level.name;
 		if(i === selected) name = '-'+name+'-';
 		ctx.fillText(name, canvas.width/2, 50 + 50 + 35*i);
+
+		if(scores[level.func.name] === undefined){
+			scores[level.func.name] = [];
+		}
 	}
 }
 

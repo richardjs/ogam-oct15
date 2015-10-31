@@ -9,11 +9,20 @@ document.body.appendChild(window.canvas);
 window.ctx = canvas.getContext('2d');
 window.mapImage = null;
 window.backgroundColor = 'black';
+window.level = null;
 window.finished = false;
 window.debug = false;
 
 window.IMAGE_CAR = document.getElementById('IMAGE_CAR');
 window.IMAGE_IMAGE_EIGHTBALL = document.getElementById('IMAGE_EIGHTBALL');
+
+var scoreJSON = localStorage.getItem('scores');
+var scores;
+if(scoreJSON){
+	scores = JSON.parse(scoreJSON);
+}else{
+	scores = {};
+}
 
 function millisToStr(time){
 	var minutes = Math.floor(time / (1000*60));
@@ -106,8 +115,33 @@ function loadMap(map){
 	entities = []
 	nonphysicsEntities = [];
 	raceTime = 0;
+	level = map.name;
 	finished = false;
 	map();
+}
+
+function finishMap(){
+	finished = true;
+	setTimeout(function(){
+		Matter.Engine.clear(engine);
+		Matter.World.clear(engine.world);
+		cancelAnimationFrame(timer);
+
+		for(var i = 0; i < scores[level].length; i++){
+			if(raceTime < scores[level][i]){
+				scores[level].splice(i, 0, raceTime);
+				break;
+			}
+		}
+		if(scores[level].length < 3){
+			scores[level].push(raceTime);
+		}
+		scores[level] = scores[level].slice(0, 3);
+
+		localStorage.setItem('scores', JSON.stringify(scores));
+
+		showMenu();
+	}, 1000);
 }
 
 window.addEventListener('load', function(){
