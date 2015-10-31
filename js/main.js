@@ -9,15 +9,31 @@ document.body.appendChild(window.canvas);
 window.ctx = canvas.getContext('2d');
 window.mapImage = null;
 window.backgroundColor = 'black';
+window.finished = false;
 window.debug = false;
 
 window.IMAGE_CAR = document.getElementById('IMAGE_CAR');
 window.IMAGE_IMAGE_EIGHTBALL = document.getElementById('IMAGE_EIGHTBALL');
 
+function millisToStr(time){
+	var minutes = Math.floor(time / (1000*60));
+	var seconds = Math.floor((time - minutes*1000*60) / 1000) + '';
+	if(seconds.length === 1){
+		seconds = '0' + seconds;
+	}
+	var millis = Math.floor(time - minutes*1000*60 - seconds*1000) + '';
+	while(millis.length < 3){
+		millis = millis + '0';
+	}
+	return minutes+':'+seconds+':'+millis;
+}
+
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 engine.world.gravity = {x: 0, y: 0};
+
+var raceTime = 0;
 
 var lastTime = null;
 var delta = null;
@@ -48,6 +64,11 @@ function frame(time){
 		}
 	}
 
+	ctx.fillStyle = 'white';
+	ctx.font = '20pt courier';
+	ctx.textAlign = 'right';
+	ctx.fillText(millisToStr(raceTime), canvas.width - 20, 20)
+
 	timer = requestAnimationFrame(frame);
 }
 
@@ -61,6 +82,9 @@ Matter.Events.on(engine, 'beforeTick', function(event){
 	}
 	delta = event.timestamp - lastTime;
 	lastTime = event.timestamp;
+	if(!finished){
+		raceTime += delta;
+	}
 	for(var i =0; i < entities.length; i++){
 		if(!entities[i].update){
 			continue;
@@ -81,6 +105,8 @@ function loadMap(map){
 	Matter.Engine.clear(engine);
 	entities = []
 	nonphysicsEntities = [];
+	raceTime = 0;
+	finished = false;
 	map();
 }
 
