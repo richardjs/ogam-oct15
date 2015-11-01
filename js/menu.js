@@ -1,10 +1,13 @@
 'use strict';
 
 var levels = [
+	{name: 'Intro', func: inabox},
 	{name: 'Highway', func: highway},
+	{name: 'Reverse', func: backtrack},
 	{name: 'Maze', func: maze},
+	{name: 'Crate', func: crate},
 	{name: 'Pool Party', func: pool}
-]
+];
 
 var selected = 0;
 

@@ -224,7 +224,7 @@ function maze()
 	backgroundColor = '#784421';
 }
 
-function reverse()
+function backtrack()
 {
 	//I am subtracting Y values from 1640 to avoid having to convert from Inkscape manually
 	new Car(120, 1640 - 1000, {angle:deg(-90)});
@@ -250,11 +250,11 @@ function reverse()
 	new WallCircle(265, 1640 - 265, 45);
 	
 	new Wall(640, 1640 - 266, 200, 500);
-	new Wall(700, 1640 - 491, 230, 140);
+	new Wall(735, 1640 - 1150, 300, 140);
 	new WallCircle(585, 1640 - 516, 45);
 	
 	new Wall(640, 1640 - 1375, 200, 500);
-	new Wall(700, 1640 - 1150, 230, 140);
+	new Wall(735, 1640 - 491, 300, 140);
 	new WallCircle(585, 1640 - 1125, 45);
 	
 	//round corners
@@ -316,5 +316,54 @@ function reverse()
 	new FinishLine(120, 1640 - 760, 200, 200);
 	
 	mapImage = document.getElementById('IMAGE_MAP05');
+	backgroundColor = '#784421';
+}
+
+function crate()
+{
+	//I am subtracting Y values from 1500 to avoid having to convert from Inkscape manually
+	new Car(250, 1500 - 120, {angle:deg(-90)});
+	
+	//walls
+	new Wall(244, 1500 + 30, 200, 100);
+	new Wall(396, 1500 - 11, 200, 100, {angle:deg(150)});
+	new Wall(500, 1500 - 123, 200, 100, {angle:deg(300)});
+	new Wall(530, 1500 - 253, 100, 200);
+	new Wall(484, 1500 - 405, 200, 100, {angle:deg(-300)});
+	new Wall(424, 1500 - 473, 200, 100, {angle:deg(-150)});
+	new Wall(362, 1500 - 660, 100, 360);
+	new Wall(424, 1500 - 847, 200, 100, {angle:deg(150)});
+	new Wall(494, 1500 - 933, 200, 100, {angle:deg(300)});
+	new Wall(530, 1500 - 1069, 100, 200);
+	new Wall(492, 1500 - 1211, 200, 100, {angle:deg(-300)});
+	new Wall(423, 1500 - 1293, 200, 100, {angle:deg(-150)});
+	new Wall(361, 1500 - 1399, 100, 200);
+	new Wall(250, 1500 - 1505, 160, 50);
+	new Wall(139, 1500 - 1399, 100, 200);
+	new Wall(77, 1500 - 1293, 200, 100, {angle:deg(150)});
+	new Wall(6, 1500 - 1207, 200, 100, {angle:deg(300)});
+	new Wall(-30, 1500 - 1069, 100, 200);
+	new Wall(4, 1500 - 936, 200, 100, {angle:deg(-300)});
+	new Wall(76, 1500 - 847, 200, 100, {angle:deg(-150)});
+	new Wall(138, 1500 - 660, 100, 360);
+	new Wall(76, 1500 - 473, 200, 100, {angle:deg(150)});
+	new Wall(16, 1500 - 405, 200, 100, {angle:deg(300)});
+	new Wall(-30, 1500 - 253, 100, 200);
+	new Wall(8, 1500 - 109, 200, 100, {angle:deg(-300)});
+	new Wall(100, 1500 - 13, 200, 100, {angle:deg(-150)});
+	
+	//crate
+	new Wall(250, 1500 - 1070, 60, 60, {isStatic:false, frictionAir:0.1, density:0.02, image:IMAGE_CRATE});
+	
+	//Button
+	new Button(250, 1500 - 250, 25,
+		//gate
+		new Wall(250, 1500 - 1319, 124, 40, {color: '#784421'}), true,
+		IMAGE_BUTTONUP, IMAGE_BUTTONDOWN
+	);
+	
+	new FinishLine(250, 1500 - 1409, 124, 140);
+	
+	mapImage = document.getElementById('IMAGE_MAP06');
 	backgroundColor = '#784421';
 }
