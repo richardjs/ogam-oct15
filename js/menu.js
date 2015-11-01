@@ -3,6 +3,7 @@
 var levels = [
 	{name: 'Intro', func: inabox},
 	{name: 'Highway', func: highway},
+	{name: 'Island', func: island},
 	{name: 'Reverse', func: backtrack},
 	{name: 'Maze', func: maze},
 	{name: 'Crate', func: crate},
