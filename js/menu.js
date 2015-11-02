@@ -72,7 +72,7 @@ function showLevelMenu(level){
 
 	var times = scores[level.func.name];
 
-	if(true || times.length){
+	if(times.length){
 		ctx.fillStyle = 'yellow';
 		ctx.fillText('record times:', canvas.width/2, 100);
 
@@ -83,6 +83,11 @@ function showLevelMenu(level){
 		}
 
 		ctx.fillText('press enter to begin, esc to go back', canvas.width/2, 100 + 50 + 35*i + 50);
+	}else{
+		ctx.fillStyle = 'yellow';
+		ctx.fillText('no records yet', canvas.width/2, 100);
+		ctx.fillStle = 'white';
+		ctx.fillText('press enter to begin, esc to go back', canvas.width/2, 100 + 50 + 50);
 	}
 
 	var levelMenuKeyHandler = function(event){
