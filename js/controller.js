@@ -20,6 +20,11 @@ document.addEventListener('keydown', function(event){
 		case 38:
 			controller.accelerate = true;
 			break;
+		case 27:
+			if(!finished){
+				raceTime = null;
+				finishMap(0, levelObject);
+			}
 	}
 });
 

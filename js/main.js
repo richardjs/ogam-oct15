@@ -10,7 +10,8 @@ window.ctx = canvas.getContext('2d');
 window.mapImage = null;
 window.backgroundColor = 'black';
 window.level = null;
-window.finished = false;
+window.levelObject = null;
+window.finished = true;
 window.debug = false;
 
 window.IMAGE_CAR = document.getElementById('IMAGE_CAR');
@@ -120,28 +121,37 @@ function loadMap(map){
 	map();
 }
 
-function finishMap(){
+function finishMap(delay, levelScreen){
+	if(delay === undefined){
+		delay = 1000;
+	}
 	finished = true;
 	setTimeout(function(){
 		Matter.Engine.clear(engine);
 		Matter.World.clear(engine.world);
 		cancelAnimationFrame(timer);
 
-		for(var i = 0; i < scores[level].length; i++){
-			if(raceTime < scores[level][i]){
-				scores[level].splice(i, 0, raceTime);
-				break;
+		if(raceTime !== null){
+			for(var i = 0; i < scores[level].length; i++){
+				if(raceTime < scores[level][i]){
+					scores[level].splice(i, 0, raceTime);
+					break;
+				}
 			}
-		}
-		if(scores[level].length < 3){
-			scores[level].push(raceTime);
-		}
-		scores[level] = scores[level].slice(0, 3);
+			if(scores[level].length < 3){
+				scores[level].push(raceTime);
+			}
+			scores[level] = scores[level].slice(0, 3);
 
-		localStorage.setItem('scores', JSON.stringify(scores));
+			localStorage.setItem('scores', JSON.stringify(scores));
+		}
 
-		showMenu();
-	}, 1000);
+		if(levelScreen === undefined){
+			showMenu();
+		}else{
+			showLevelMenu(levelScreen);
+		}
+	}, delay);
 }
 
 window.addEventListener('load', function(){

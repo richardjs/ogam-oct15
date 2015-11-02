@@ -20,7 +20,7 @@ FinishLine.prototype.update = function(delta){
 	var py = player.body.position.y;
 	if(px > this.x - this.width/2 && px < this.x + this.width/2 && py > this.y - this.height/2 && py < this.y + this.height/2){
 		this.finished = true;
-		finishMap();
+		finishMap(undefined, levelObject);
 	}
 }
 

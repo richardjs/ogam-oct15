@@ -60,6 +60,8 @@ function showMenu(){
 }
 
 function showLevelMenu(level){
+	levelObject = level;
+
 	ctx.fillStyle = 'black';
 	ctx.fillRect(0, 0, canvas.width, canvas.height);
 	ctx.fillStyle = 'red';
