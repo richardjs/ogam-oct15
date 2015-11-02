@@ -71,21 +71,31 @@ function showLevelMenu(level){
 
 	var times = scores[level.func.name];
 
-	if(true || times.length){
+	if(times.length){
 		ctx.fillStyle = 'yellow';
 		ctx.fillText('record times:', canvas.width/2, 100);
 
 		for(var i = 0; i < times.length; i++){
-			var time = times[i];
-			ctx.fillStyle = 'white';
+			var time = times[i].time;
+			if(time === lastRaceTime){
+				ctx.fillStyle = 'green';
+			}else{
+				ctx.fillStyle = 'white';
+			}
 			ctx.fillText(millisToStr(time), canvas.width/2, 100 + 50 + 35*i);
 		}
 
+		ctx.fillStyle = 'white';
 		ctx.fillText('press enter to begin, esc to go back', canvas.width/2, 100 + 50 + 35*i + 50);
+	}else{
+		ctx.fillStyle = 'yellow';
+		ctx.fillText('no records yet', canvas.width/2, 100);
+		ctx.fillStyle = 'white';
+		ctx.fillText('press enter to begin, esc to go back', canvas.width/2, 100 + 50 + 50);
 	}
 
 	var levelMenuKeyHandler = function(event){
-		if(event.keyCode === 13){
+		if(event.keyCode === 13 || event.keyCode === 32){
 			document.removeEventListener('keydown', levelMenuKeyHandler);
 			loadMap(levels[selected].func);
 			requestAnimationFrame(frame);

@@ -17,7 +17,7 @@ window.debug = false;
 window.IMAGE_CAR = document.getElementById('IMAGE_CAR');
 window.IMAGE_IMAGE_EIGHTBALL = document.getElementById('IMAGE_EIGHTBALL');
 
-var scoreJSON = localStorage.getItem('scores');
+var scoreJSON = localStorage.getItem('rcrscores');
 var scores;
 if(scoreJSON){
 	scores = JSON.parse(scoreJSON);
@@ -37,13 +37,13 @@ function millisToStr(time){
 	}
 	return minutes+':'+seconds+':'+millis;
 }
-
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 engine.world.gravity = {x: 0, y: 0};
 
 var raceTime = 0;
+var lastRaceTime = 0;
 
 var lastTime = null;
 var delta = null;
@@ -62,7 +62,7 @@ function frame(time){
 		var entity = nonphysicsEntities[i];
 
 		// render buttons
-		if(entity.offImage && entity.onImage){
+		if((entity.offImage && entity.onImage) || entity.recording){
 			entity.render();
 		}
 	}
@@ -118,6 +118,9 @@ function loadMap(map){
 	raceTime = 0;
 	level = map.name;
 	finished = false;
+	for(var i = 0; i < scores[level].length; i++){
+		new Ghost(scores[level][i].recording);
+	}
 	map();
 }
 
@@ -131,21 +134,24 @@ function finishMap(delay, levelScreen){
 		Matter.World.clear(engine.world);
 		cancelAnimationFrame(timer);
 
+		var addedScore = false;
 		if(raceTime !== null){
 			for(var i = 0; i < scores[level].length; i++){
-				if(raceTime < scores[level][i]){
-					scores[level].splice(i, 0, raceTime);
+				if(raceTime < scores[level][i].time){
+					scores[level].splice(i, 0, {time: raceTime, recording: player.recording});
+					addedScore = true;
 					break;
 				}
 			}
-			if(scores[level].length < 3){
-				scores[level].push(raceTime);
+			if(scores[level].length < 3 && !addedScore){
+				scores[level].push({time: raceTime, recording: player.recording});
 			}
 			scores[level] = scores[level].slice(0, 3);
 
-			localStorage.setItem('scores', JSON.stringify(scores));
+			localStorage.setItem('rcrscores', JSON.stringify(scores));
 		}
 
+		lastRaceTime = raceTime;
 		if(levelScreen === undefined){
 			showMenu();
 		}else{
