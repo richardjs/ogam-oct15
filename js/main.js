@@ -131,14 +131,16 @@ function finishMap(delay, levelScreen){
 		Matter.World.clear(engine.world);
 		cancelAnimationFrame(timer);
 
+		var addedScore = false;
 		if(raceTime !== null){
 			for(var i = 0; i < scores[level].length; i++){
 				if(raceTime < scores[level][i]){
 					scores[level].splice(i, 0, raceTime);
+					addedScore = true;
 					break;
 				}
 			}
-			if(scores[level].length < 3){
+			if(scores[level].length < 3 && !addedScore){
 				scores[level].push(raceTime);
 			}
 			scores[level] = scores[level].slice(0, 3);
