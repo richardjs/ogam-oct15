@@ -424,3 +424,76 @@ function island()
 	mapImage = document.getElementById('IMAGE_MAP07');
 	backgroundColor = '#0000FF';
 }
+
+function hockey()
+{
+	//I am subtracting Y values from 620 to avoid having to convert from Inkscape manually
+	new Car(610, 620 - 255, {frictionAir:0.01});
+	
+	//walls
+	new Wall(-40, 620 - 330, 100, 700);
+	new Wall(200, 620 - 576, 420, 130);
+	new Wall(520, 620 - 521, 420, 20);
+	new Wall(610, 620 - 675, 420, 130);
+	new Wall(1020, 620 - 576, 420, 130);
+	new Wall(1260, 620 - 330, 100, 700);
+	new Wall(600, 620 + 50, 1200, 100);
+	
+	//corners
+	new Wall(1144, 620 - 522, 60, 30, {angle:deg(10)});
+	new Wall(1158, 620 - 516, 60, 30, {angle:deg(20)});
+	new Wall(1176, 620 - 506, 60, 30, {angle:deg(30)});
+	new Wall(1186, 620 - 498, 60, 30, {angle:deg(40)});
+	new Wall(1198, 620 - 486, 60, 30, {angle:deg(50)});
+	new Wall(1212, 620 - 466, 60, 30, {angle:deg(60)});
+	new Wall(1220, 620 - 448, 60, 30, {angle:deg(70)});
+	new Wall(1224, 620 - 432, 60, 30, {angle:deg(80)});
+	
+	new Wall(1144, 620 + 11, 60, 30, {angle:deg(-10)});
+	new Wall(1158, 620 + 5, 60, 30, {angle:deg(-20)});
+	new Wall(1176, 620 - 5, 60, 30, {angle:deg(-30)});
+	new Wall(1186, 620 - 13, 60, 30, {angle:deg(-40)});
+	new Wall(1198, 620 - 25, 60, 30, {angle:deg(-50)});
+	new Wall(1212, 620 - 45, 60, 30, {angle:deg(-60)});
+	new Wall(1220, 620 - 63, 60, 30, {angle:deg(-70)});
+	new Wall(1224, 620 - 79, 60, 30, {angle:deg(-80)});
+	
+	new Wall(78, 620 + 11, 60, 30, {angle:deg(10)});
+	new Wall(63, 620 + 5, 60, 30, {angle:deg(20)});
+	new Wall(45, 620 - 5, 60, 30, {angle:deg(30)});
+	new Wall(35, 620 - 13, 60, 30, {angle:deg(40)});
+	new Wall(23, 620 - 25, 60, 30, {angle:deg(50)});
+	new Wall(9, 620 - 45, 60, 30, {angle:deg(60)});
+	new Wall(1, 620 - 63, 60, 30, {angle:deg(70)});
+	new Wall(-3, 620 - 79, 60, 30, {angle:deg(80)});
+	
+	new Wall(77, 620 - 522, 60, 30, {angle:deg(-10)});
+	new Wall(63, 620 - 516, 60, 30, {angle:deg(-20)});
+	new Wall(45, 620 - 506, 60, 30, {angle:deg(-30)});
+	new Wall(35, 620 - 498, 60, 30, {angle:deg(-40)});
+	new Wall(23, 620 - 486, 60, 30, {angle:deg(-50)});
+	new Wall(9, 620 - 466, 60, 30, {angle:deg(-60)});
+	new Wall(1, 620 - 448, 60, 30, {angle:deg(-70)});
+	new Wall(-3, 620 - 432, 60, 30, {angle:deg(-80)});
+	
+	//Buttons
+	new Button(1178, 620 - 255, 25,
+		//gate
+		new Wall(770, 620 - 520, 80, 20, {image:IMAGE_GATE02}), true,
+		IMAGE_BUTTONUP, IMAGE_BUTTONDOWN
+	);
+	new Button(42, 620 - 255, 25,
+		//gate
+		new Wall(770, 620 - 520, 80, 20, {image:IMAGE_GATE02}), true,
+		IMAGE_BUTTONUP, IMAGE_BUTTONDOWN
+	);
+	
+	//pucks
+	new WallCircle(610, 620 - 395, 20, {isStatic:false, color:'#1A1A1A', frictionAir:0.01});
+	new WallCircle(610, 620 - 115, 20, {isStatic:false, color:'#1A1A1A', frictionAir:0.01});
+	
+	new FinishLine(475, 620 - 570, 130, 80);
+	
+	mapImage = document.getElementById('IMAGE_MAP08');
+	backgroundColor = '#784421';
+}

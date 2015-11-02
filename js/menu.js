@@ -7,6 +7,7 @@ var levels = [
 	{name: 'Reverse', func: backtrack},
 	{name: 'Maze', func: maze},
 	{name: 'Crate', func: crate},
+	{name: 'Hockey', func: hockey},
 	{name: 'Pool Party', func: pool}
 ];
 
