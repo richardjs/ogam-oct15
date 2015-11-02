@@ -209,12 +209,12 @@ function maze()
 	//button
 	new Button(1340, 1480 - 380, 25,
 		//gate
-		new Wall(980, 1480 - 1100, 40, 200, {color: '#784421'}), false,
+		new Wall(980, 1480 - 1100, 200, 40, {image:IMAGE_GATE04, angle:deg(90)}), false,
 		IMAGE_BUTTONUP, IMAGE_BUTTONDOWN
 	);
 	new Button(140, 1480 - 140, 25,
 		//gate
-		new Wall(980, 1480 - 1100, 40, 200, {color: '#784421'}), false,
+		new Wall(980, 1480 - 1100, 200, 40, {image:IMAGE_GATE04, angle:deg(90)}), false,
 		IMAGE_BUTTONUP, IMAGE_BUTTONDOWN
 	);
 	
@@ -309,7 +309,7 @@ function backtrack()
 	//Button
 	new Button(120, 1640 - 525, 25,
 		//gate
-		new Wall(120, 1640 - 880, 200, 40, {color: '#784421'}), false,
+		new Wall(120, 1640 - 880, 200, 40, {image: IMAGE_GATE04}), false,
 		IMAGE_BUTTONUP, IMAGE_BUTTONDOWN
 	);
 	
@@ -358,7 +358,7 @@ function crate()
 	//Button
 	new Button(250, 1500 - 250, 25,
 		//gate
-		new Wall(250, 1500 - 1319, 124, 40, {color: '#784421'}), true,
+		new Wall(250, 1500 - 1319, 124, 40, {image: IMAGE_GATE03}), true,
 		IMAGE_BUTTONUP, IMAGE_BUTTONDOWN
 	);
 	
