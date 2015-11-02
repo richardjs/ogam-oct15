@@ -374,49 +374,49 @@ function island()
 	new Car(170, 1500 - 170, {frictionAir:0.2});
 	
 	//islands
-	new FrictionZoneCircle(170, 1500 - 170, 150, 0.1);
+	new FrictionZoneCircle(170, 1500 - 170, 150, 0.08);
 	new FrictionZoneCircle(170, 1500 - 170, 110, 0.05);
 	
-	new FrictionZoneCircle(310, 1500 - 390, 51, 0.1);
+	new FrictionZoneCircle(310, 1500 - 390, 51, 0.08);
 	new FrictionZoneCircle(310, 1500 - 390, 39, 0.05);
 	
-	new FrictionZoneCircle(520, 1500 - 260, 100, 0.1);
+	new FrictionZoneCircle(520, 1500 - 260, 100, 0.08);
 	new FrictionZoneCircle(520, 1500 - 260, 75, 0.05);
 	
-	new FrictionZoneCircle(760, 1500 - 160, 60, 0.1);
+	new FrictionZoneCircle(760, 1500 - 160, 60, 0.08);
 	new FrictionZoneCircle(760, 1500 - 160, 45, 0.05);
 	
-	new FrictionZoneCircle(820, 1500 - 400, 120, 0.1);
+	new FrictionZoneCircle(820, 1500 - 400, 120, 0.08);
 	new FrictionZoneCircle(820, 1500 - 400, 90, 0.05);
 	
-	new FrictionZoneCircle(1075, 1500 - 425, 75, 0.1);
+	new FrictionZoneCircle(1075, 1500 - 425, 75, 0.08);
 	new FrictionZoneCircle(1075.5, 1500 - 425.5, 57.5, 0.05);
 	
-	new FrictionZoneCircle(1055, 1500 - 625, 75, 0.1);
+	new FrictionZoneCircle(1055, 1500 - 625, 75, 0.08);
 	new FrictionZoneCircle(1055.5, 1500 - 625.5, 57.5, 0.05);
 	
-	new FrictionZoneCircle(1290, 1500 - 590, 100, 0.1);
+	new FrictionZoneCircle(1290, 1500 - 590, 100, 0.08);
 	new FrictionZoneCircle(1290, 1500 - 590, 75, 0.05);
 	
-	new FrictionZoneCircle(1150, 1500 - 880, 130, 0.1);
+	new FrictionZoneCircle(1150, 1500 - 880, 130, 0.08);
 	new FrictionZoneCircle(1150, 1500 - 880, 100, 0.05);
 	
-	new FrictionZoneCircle(1290, 1500 - 1150, 51, 0.1);
+	new FrictionZoneCircle(1290, 1500 - 1150, 51, 0.08);
 	new FrictionZoneCircle(1290, 1500 - 1150, 39, 0.05);
 	
-	new FrictionZoneCircle(910, 1500 - 890, 51, 0.1);
+	new FrictionZoneCircle(910, 1500 - 890, 51, 0.08);
 	new FrictionZoneCircle(910, 1500 - 890, 39, 0.05);
 	
-	new FrictionZoneCircle(950, 1500 - 1100, 110, 0.1);
+	new FrictionZoneCircle(950, 1500 - 1100, 110, 0.08);
 	new FrictionZoneCircle(950, 1500 - 1100, 85, 0.05);
 	
-	new FrictionZoneCircle(780, 1500 - 1290, 90, 0.1);
+	new FrictionZoneCircle(780, 1500 - 1290, 90, 0.08);
 	new FrictionZoneCircle(780, 1500 - 1290, 70, 0.05);
 	
-	new FrictionZoneCircle(620, 1500 - 1080, 60, 0.1);
+	new FrictionZoneCircle(620, 1500 - 1080, 60, 0.08);
 	new FrictionZoneCircle(620, 1500 - 1080, 45, 0.05);
 	
-	new FrictionZoneCircle(510, 1500 - 1340, 140, 0.1);
+	new FrictionZoneCircle(510, 1500 - 1340, 140, 0.08);
 	new FrictionZoneCircle(510, 1500 - 1340, 105, 0.05);
 	
 	new FinishLine(510, 1500 - 1340, 120, 120);
