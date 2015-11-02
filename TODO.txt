@@ -1,6 +1,5 @@
 For Richard:
 - record times
-- retry / exit race
 
 - particle fx
 
