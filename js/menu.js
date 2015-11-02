@@ -77,7 +77,7 @@ function showLevelMenu(level){
 		ctx.fillText('record times:', canvas.width/2, 100);
 
 		for(var i = 0; i < times.length; i++){
-			var time = times[i];
+			var time = times[i].time;
 			if(time === lastRaceTime){
 				ctx.fillStyle = 'green';
 			}else{
@@ -96,7 +96,7 @@ function showLevelMenu(level){
 	}
 
 	var levelMenuKeyHandler = function(event){
-		if(event.keyCode === 13){
+		if(event.keyCode === 13 || event.keyCode === 32){
 			document.removeEventListener('keydown', levelMenuKeyHandler);
 			loadMap(levels[selected].func);
 			requestAnimationFrame(frame);

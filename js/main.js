@@ -134,14 +134,14 @@ function finishMap(delay, levelScreen){
 		var addedScore = false;
 		if(raceTime !== null){
 			for(var i = 0; i < scores[level].length; i++){
-				if(raceTime < scores[level][i]){
-					scores[level].splice(i, 0, raceTime);
+				if(raceTime < scores[level][i].time){
+					scores[level].splice(i, 0, {time: raceTime, recording: player.recording});
 					addedScore = true;
 					break;
 				}
 			}
 			if(scores[level].length < 3 && !addedScore){
-				scores[level].push(raceTime);
+				scores[level].push({time: raceTime, recording: player.recording});
 			}
 			scores[level] = scores[level].slice(0, 3);
 

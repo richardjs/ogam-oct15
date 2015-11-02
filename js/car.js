@@ -24,9 +24,14 @@ function Car(x, y, options){
 	Matter.World.add(engine.world, this.body);
 	entities.push(this)
 	player = this;
+
+	this.recording = [];
 }
 
 Car.prototype.update = function(delta){
+	if(finished){
+		return;
+	}
 	if(!this.inFrictionZone){
 		this.body.frictionAir = this.originalFriction;
 	}
@@ -83,6 +88,8 @@ Car.prototype.update = function(delta){
 			Matter.Vector.rotate({x: 0, y: -CAR_THRUSTER_POWER * delta/1000}, this.body.angle)
 		);
 	}
+
+	this.recording.push({x: this.body.position.x, y: this.body.position.y, angle: this.body.angle, time: raceTime});
 }
 
 Car.prototype.render = function(){
