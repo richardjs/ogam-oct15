@@ -62,7 +62,7 @@ function frame(time){
 		var entity = nonphysicsEntities[i];
 
 		// render buttons
-		if(entity.offImage && entity.onImage){
+		if((entity.offImage && entity.onImage) || entity.recording){
 			entity.render();
 		}
 	}
@@ -118,6 +118,9 @@ function loadMap(map){
 	raceTime = 0;
 	level = map.name;
 	finished = false;
+	for(var i = 0; i < scores[level].length; i++){
+		new Ghost(scores[level][i].recording);
+	}
 	map();
 }
 
