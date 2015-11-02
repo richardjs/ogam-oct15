@@ -17,7 +17,7 @@ window.debug = false;
 window.IMAGE_CAR = document.getElementById('IMAGE_CAR');
 window.IMAGE_IMAGE_EIGHTBALL = document.getElementById('IMAGE_EIGHTBALL');
 
-var scoreJSON = localStorage.getItem('scores');
+var scoreJSON = localStorage.getItem('rcrscores');
 var scores;
 if(scoreJSON){
 	scores = JSON.parse(scoreJSON);
@@ -37,13 +37,13 @@ function millisToStr(time){
 	}
 	return minutes+':'+seconds+':'+millis;
 }
-
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 engine.world.gravity = {x: 0, y: 0};
 
 var raceTime = 0;
+var lastRaceTime = 0;
 
 var lastTime = null;
 var delta = null;
@@ -145,9 +145,10 @@ function finishMap(delay, levelScreen){
 			}
 			scores[level] = scores[level].slice(0, 3);
 
-			localStorage.setItem('scores', JSON.stringify(scores));
+			localStorage.setItem('rcrscores', JSON.stringify(scores));
 		}
 
+		lastRaceTime = raceTime;
 		if(levelScreen === undefined){
 			showMenu();
 		}else{

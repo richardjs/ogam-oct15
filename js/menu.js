@@ -78,15 +78,20 @@ function showLevelMenu(level){
 
 		for(var i = 0; i < times.length; i++){
 			var time = times[i];
-			ctx.fillStyle = 'white';
+			if(time === lastRaceTime){
+				ctx.fillStyle = 'green';
+			}else{
+				ctx.fillStyle = 'white';
+			}
 			ctx.fillText(millisToStr(time), canvas.width/2, 100 + 50 + 35*i);
 		}
 
+		ctx.fillStyle = 'white';
 		ctx.fillText('press enter to begin, esc to go back', canvas.width/2, 100 + 50 + 35*i + 50);
 	}else{
 		ctx.fillStyle = 'yellow';
 		ctx.fillText('no records yet', canvas.width/2, 100);
-		ctx.fillStle = 'white';
+		ctx.fillStyle = 'white';
 		ctx.fillText('press enter to begin, esc to go back', canvas.width/2, 100 + 50 + 50);
 	}
 
