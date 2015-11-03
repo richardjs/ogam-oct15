@@ -13,9 +13,10 @@ window.level = null;
 window.levelObject = null;
 window.finished = true;
 window.debug = false;
+window.stardust = new Stardust();
 
 window.IMAGE_CAR = document.getElementById('IMAGE_CAR');
-window.IMAGE_IMAGE_EIGHTBALL = document.getElementById('IMAGE_EIGHTBALL');
+window.IMAGE_FIRE1 = document.getElementById('IMAGE_FIRE1');
 
 var scoreJSON = localStorage.getItem('rcrscores');
 var scores;
@@ -74,6 +75,11 @@ function frame(time){
 		}
 	}
 
+	ctx.save();
+	ctx.translate(-player.body.position.x + canvas.width/2, -player.body.position.y + canvas.height/2);
+	stardust.render(canvas, ctx);
+	ctx.restore();
+
 	ctx.fillStyle = 'white';
 	ctx.font = '20pt courier';
 	ctx.textAlign = 'right';
@@ -101,6 +107,8 @@ Matter.Events.on(engine, 'beforeTick', function(event){
 		}
 		entities[i].update(delta);
 	}
+
+	stardust.update(delta);
 });
 
 Matter.Events.on(engine, 'afterTick', function(event){

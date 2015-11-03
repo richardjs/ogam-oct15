@@ -26,6 +26,56 @@ function Car(x, y, options){
 	player = this;
 
 	this.recording = [];
+
+	this.backEmitter = stardust.add(0, 0, {
+		image: IMAGE_FIRE1,
+		width: 0,
+		height: 0,
+		ttl: null,
+		emitCount: 0,
+		emitInterval: 10,
+		particleVelocity: {x: 0, y: 0},
+		particleTTL: function(){return Math.random() * 100}
+	});
+	this.frontRight = stardust.add(0, 0, {
+		image: IMAGE_FIRE1,
+		width: 0,
+		height: 0,
+		ttl: null,
+		emitCount: 0,
+		emitInterval: 10,
+		particleTTL: function(){return Math.random() * 50},
+	});
+	this.frontLeft = stardust.add(0, 0, {
+		image: IMAGE_FIRE1,
+		width: 0,
+		height: 0,
+		ttl: null,
+		emitCount: 0,
+		emitInterval: 10,
+		particleVelocity: {x: 0, y: 0},
+		particleTTL: function(){return Math.random() * 50}
+	});
+	this.backRight = stardust.add(0, 0, {
+		image: IMAGE_FIRE1,
+		width: 0,
+		height: 0,
+		ttl: null,
+		emitCount: 0,
+		emitInterval: 10,
+		particleVelocity: {x: 0, y: 0},
+		particleTTL: function(){return Math.random() * 50}
+	});
+	this.backLeft = stardust.add(0, 0, {
+		image: IMAGE_FIRE1,
+		width: 0,
+		height: 0,
+		ttl: null,
+		emitCount: 0,
+		emitInterval: 10,
+		particleVelocity: {x: 0, y: 0},
+		particleTTL: function(){return Math.random() * 50}
+	});
 }
 
 Car.prototype.update = function(delta){
@@ -90,6 +140,51 @@ Car.prototype.update = function(delta){
 	}
 
 	this.recording.push({x: this.body.position.x, y: this.body.position.y, angle: this.body.angle, time: raceTime});
+	
+	this.backEmitter.x = this.body.position.x + (-30 * Math.cos(this.body.angle));
+	this.backEmitter.y = this.body.position.y + (-30 * Math.sin(this.body.angle));
+	if(controller.accelerate){
+		this.backEmitter.emitCount = 10;
+	}else{
+		this.backEmitter.emitCount = 0;
+	}
+	this.frontRight.x = this.body.position.x + (23 * Math.cos(this.body.angle));
+	this.frontRight.y = this.body.position.y + (23 * Math.sin(this.body.angle));
+	this.frontRight.x += (13 * Math.cos(this.body.angle + Math.PI/2));
+	this.frontRight.y += (13 * Math.sin(this.body.angle + Math.PI/2));
+	if(controller.forwardRight){
+		this.frontRight.emitCount = 10;
+	}else{
+		this.frontRight.emitCount = 0;
+	}
+	this.frontRight.velocity = this.body.velocity;
+	this.frontLeft.x = this.body.position.x + (23 * Math.cos(this.body.angle));
+	this.frontLeft.y = this.body.position.y + (23 * Math.sin(this.body.angle));
+	this.frontLeft.x += (-13 * Math.cos(this.body.angle + Math.PI/2));
+	this.frontLeft.y += (-13 * Math.sin(this.body.angle + Math.PI/2));
+	if(controller.forwardLeft){
+		this.frontLeft.emitCount = 10;
+	}else{
+		this.frontLeft.emitCount = 0;
+	}
+	this.backRight.x = this.body.position.x + (-23 * Math.cos(this.body.angle));
+	this.backRight.y = this.body.position.y + (-23 * Math.sin(this.body.angle));
+	this.backRight.x += (13 * Math.cos(this.body.angle + Math.PI/2));
+	this.backRight.y += (13 * Math.sin(this.body.angle + Math.PI/2));
+	if(controller.backRight){
+		this.backRight.emitCount = 10;
+	}else{
+		this.backRight.emitCount = 0;
+	}
+	this.backLeft.x = this.body.position.x + (-23 * Math.cos(this.body.angle));
+	this.backLeft.y = this.body.position.y + (-23 * Math.sin(this.body.angle));
+	this.backLeft.x += (-13 * Math.cos(this.body.angle + Math.PI/2));
+	this.backLeft.y += (-13 * Math.sin(this.body.angle + Math.PI/2));
+	if(controller.backLeft){
+		this.backLeft.emitCount = 10;
+	}else{
+		this.backLeft.emitCount = 0;
+	}
 }
 
 Car.prototype.render = function(){
