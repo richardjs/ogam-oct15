@@ -49,6 +49,7 @@ engine.world.gravity = {x: 0, y: 0};
 
 var raceTime = 0;
 var lastRaceTime = 0;
+var finishTime = null;
 
 var lastTime = null;
 var delta = null;
@@ -88,7 +89,11 @@ function frame(time){
 	ctx.fillStyle = 'white';
 	ctx.font = '20pt courier';
 	ctx.textAlign = 'right';
-	ctx.fillText(millisToStr(raceTime), canvas.width - 20, 20)
+	if(finishTime > 0){
+		ctx.fillText(millisToStr(finishTime), canvas.width - 20, 20)
+	}else{
+		ctx.fillText(millisToStr(raceTime), canvas.width - 20, 20)
+	}
 
 	timer = requestAnimationFrame(frame);
 }
@@ -103,9 +108,7 @@ Matter.Events.on(engine, 'beforeTick', function(event){
 	}
 	delta = event.timestamp - lastTime;
 	lastTime = event.timestamp;
-	if(!finished){
-		raceTime += delta;
-	}
+	raceTime += delta;
 	for(var i =0; i < entities.length; i++){
 		if(!entities[i].update){
 			continue;
@@ -136,6 +139,7 @@ function loadMap(map){
 }
 
 function finishMap(delay, levelScreen){
+	finishTime = raceTime;
 	if(delay === undefined){
 		delay = 1000;
 	}
@@ -144,6 +148,8 @@ function finishMap(delay, levelScreen){
 		Matter.Engine.clear(engine);
 		Matter.World.clear(engine.world);
 		cancelAnimationFrame(timer);
+		
+		raceTime = finishTime;
 
 		var addedScore = false;
 		if(raceTime !== null){

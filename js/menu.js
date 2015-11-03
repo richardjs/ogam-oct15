@@ -47,6 +47,7 @@ function menuKeyHandler(event){
 			drawMenu();
 			break;
 		case 13:
+		case 32:
 			document.removeEventListener('keydown', menuKeyHandler);
 			showLevelMenu(levels[selected]);
 			break;
@@ -86,12 +87,12 @@ function showLevelMenu(level){
 		}
 
 		ctx.fillStyle = 'white';
-		ctx.fillText('press enter to begin, esc to go back', canvas.width/2, 100 + 50 + 35*i + 50);
+		ctx.fillText('press space to begin, esc to go back', canvas.width/2, 100 + 50 + 35*i + 50);
 	}else{
 		ctx.fillStyle = 'yellow';
 		ctx.fillText('no records yet', canvas.width/2, 100);
 		ctx.fillStyle = 'white';
-		ctx.fillText('press enter to begin, esc to go back', canvas.width/2, 100 + 50 + 50);
+		ctx.fillText('press space to begin, esc to go back', canvas.width/2, 100 + 50 + 50);
 	}
 
 	var levelMenuKeyHandler = function(event){
