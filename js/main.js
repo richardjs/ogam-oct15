@@ -18,7 +18,7 @@ window.backgroundMusic = new Howl({
 	urls: ['sfx/reformat_the_planet.mp3'],
 	loop: true,
 	autoplay: true,
-	volume: .05 
+	volume: .5
 });
 
 window.IMAGE_CAR = document.getElementById('IMAGE_CAR');
