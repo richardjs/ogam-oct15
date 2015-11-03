@@ -44,6 +44,10 @@ function millisToStr(time){
 }
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
+window.addEventListener('resize', function(){
+	canvas.width = window.innerWidth;
+	canvas.height = window.innerHeight;
+});
 
 engine.world.gravity = {x: 0, y: 0};
 
