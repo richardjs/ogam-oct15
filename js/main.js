@@ -75,10 +75,12 @@ function frame(time){
 		}
 	}
 
-	ctx.save();
-	ctx.translate(-player.body.position.x + canvas.width/2, -player.body.position.y + canvas.height/2);
-	stardust.render(canvas, ctx);
-	ctx.restore();
+	if(!finished){
+		ctx.save();
+		ctx.translate(-player.body.position.x + canvas.width/2, -player.body.position.y + canvas.height/2);
+		stardust.render(canvas, ctx);
+		ctx.restore();
+	}
 
 	ctx.fillStyle = 'white';
 	ctx.font = '20pt courier';
@@ -123,6 +125,7 @@ function loadMap(map){
 	Matter.Engine.clear(engine);
 	entities = [];
 	nonphysicsEntities = [];
+	stardust.emitters = [];
 	raceTime = 0;
 	level = map.name;
 	finished = false;
