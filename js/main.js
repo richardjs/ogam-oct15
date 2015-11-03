@@ -130,6 +130,7 @@ function loadMap(map){
 	entities = [];
 	nonphysicsEntities = [];
 	raceTime = 0;
+	finishTime = 0;
 	level = map.name;
 	finished = false;
 	for(var i = 0; i < scores[level].length; i++){
