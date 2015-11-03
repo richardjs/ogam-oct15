@@ -13,7 +13,6 @@ window.level = null;
 window.levelObject = null;
 window.finished = true;
 window.debug = false;
-window.stardust = new Stardust();
 
 window.IMAGE_CAR = document.getElementById('IMAGE_CAR');
 window.IMAGE_FRONTRIGHT = document.getElementById('IMAGE_FRONTRIGHT');
@@ -83,7 +82,6 @@ function frame(time){
 	if(!finished){
 		ctx.save();
 		ctx.translate(-player.body.position.x + canvas.width/2, -player.body.position.y + canvas.height/2);
-		stardust.render(canvas, ctx);
 		ctx.restore();
 	}
 
@@ -114,8 +112,6 @@ Matter.Events.on(engine, 'beforeTick', function(event){
 		}
 		entities[i].update(delta);
 	}
-
-	stardust.update(delta);
 });
 
 Matter.Events.on(engine, 'afterTick', function(event){
@@ -130,7 +126,6 @@ function loadMap(map){
 	Matter.Engine.clear(engine);
 	entities = [];
 	nonphysicsEntities = [];
-	stardust.emitters = [];
 	raceTime = 0;
 	level = map.name;
 	finished = false;
