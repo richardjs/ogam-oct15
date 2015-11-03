@@ -61,7 +61,7 @@ function frame(time){
 	for(var i = 0; i < nonphysicsEntities.length; i++){
 		var entity = nonphysicsEntities[i];
 
-		// render buttons
+		// render buttons and ghosts
 		if((entity.offImage && entity.onImage) || entity.recording){
 			entity.render();
 		}
