@@ -16,6 +16,11 @@ window.debug = false;
 window.stardust = new Stardust();
 
 window.IMAGE_CAR = document.getElementById('IMAGE_CAR');
+window.IMAGE_FRONTRIGHT = document.getElementById('IMAGE_FRONTRIGHT');
+window.IMAGE_FRONTLEFT = document.getElementById('IMAGE_FRONTLEFT');
+window.IMAGE_BACKRIGHT = document.getElementById('IMAGE_BACKRIGHT');
+window.IMAGE_BACKLEFT = document.getElementById('IMAGE_BACKLEFT');
+window.IMAGE_BACKTHRUSTER = document.getElementById('IMAGE_BACKTHRUSTER');
 window.IMAGE_FIRE1 = document.getElementById('IMAGE_FIRE1');
 
 var scoreJSON = localStorage.getItem('rcrscores');
