@@ -51,6 +51,10 @@ function menuKeyHandler(event){
 			document.removeEventListener('keydown', menuKeyHandler);
 			showLevelMenu(levels[selected]);
 			break;
+		case 27:
+			event.preventDefault();
+			window.location = 'index.html';
+			break;
 	}
 }
 
