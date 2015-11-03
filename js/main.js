@@ -45,7 +45,7 @@ function millisToStr(time){
 	}
 	var millis = Math.floor(time - minutes*1000*60 - seconds*1000) + '';
 	while(millis.length < 3){
-		millis = millis + '0';
+		millis = '0' + millis;
 	}
 	return minutes+':'+seconds+':'+millis;
 }
