@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
 	<head>
+		<meta charset="utf-8">
 		<style>
 			body{
 				background: #784421;
@@ -45,16 +46,25 @@
 				<li>A and D - fire aft side thrusters</li>
 			</ul>
 			<p>Race to the finish line and beat the best time!</p>
-			<h3 style="color: red"><center>Press space to continue</center></h3>
+			<p><small><a href="credits.html">Credits</a></small></p>
+			<h3 style="color: red; margin-top: 0px;"><center>Press space to continue</center></h3>
 		</div>
 
+		<script src="lib/howler.js"></script>
 		<script>
-		document.addEventListener('keydown', function(event){
-			if(event.keyCode === 13 || event.keyCode === 32){
-				event.preventDefault();
-				window.location = 'game.html';
-			}
-		});
+			document.addEventListener('keydown', function(event){
+				if(event.keyCode === 13 || event.keyCode === 32){
+					event.preventDefault();
+					window.location = 'game.html';
+				}
+			});
+
+			window.backgroundMusic = new Howl({
+				urls: ['sfx/la_la_triroriro.mp3'],
+				loop: true,
+				autoplay: true,
+				volume: .05 
+			});
 		</script>
 	</body>
 </html>

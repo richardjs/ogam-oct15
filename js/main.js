@@ -14,6 +14,13 @@ window.levelObject = null;
 window.finished = true;
 window.debug = false;
 
+window.backgroundMusic = new Howl({
+	urls: ['sfx/reformat_the_planet.mp3'],
+	loop: true,
+	autoplay: true,
+	volume: .05 
+});
+
 window.IMAGE_CAR = document.getElementById('IMAGE_CAR');
 window.IMAGE_FRONTRIGHT = document.getElementById('IMAGE_FRONTRIGHT');
 window.IMAGE_FRONTLEFT = document.getElementById('IMAGE_FRONTLEFT');
